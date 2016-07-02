@@ -1,2 +1,2 @@
 # profile
-Profile page
+Simple profile and interactive resume

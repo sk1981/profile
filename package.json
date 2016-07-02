@@ -1,0 +1,26 @@
+{
+  "name": "profile",
+  "version": "0.0.0",
+  "description": "Profile",
+  "main": "app/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sk1981/profile.git"
+  },
+  "keywords": [
+    "profile"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sk1981/profile/issues"
+  },
+  "homepage": "https://github.com/sk1981/profile#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "webpack": "^1.13.1"
+  }
+}
