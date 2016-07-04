@@ -1,0 +1,86 @@
+$main-content-width: 900px;
+body {
+  margin: 0;
+  background-color: #f2e2d9;
+  color: #526072;
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-size: 20px;
+}
+
+.header-main {
+  font-family: 'Trocchi', cursive;
+}
+
+
+.container {
+  width: $main-content-width;
+  margin: auto;
+  box-shadow: 1px 20px 30px 0 #000;
+  min-height: 100vh;
+  background-color: rgba(#F8F9F8, 0.9);
+  margin-top: -20px;
+  padding: 15px;
+}
+
+header {
+  box-shadow: 0 16px 6px -6px #666;
+}
+
+.header-info {
+  width: $main-content-width;
+  margin: auto;
+}
+
+.section--header {
+  font-size: 30px;
+  border-bottom: 1px solid;
+  padding-top: 10px;
+}
+
+.about-info {
+  padding-top: 10px;
+}
+
+.skill {
+  position:relative;
+  margin: 80px;
+}
+@mixin circle($radius) {
+  height: $radius;
+  width: $radius;
+  //border: 8px solid;
+  border-radius: $radius/2;
+  line-height:$radius;
+  text-align:center;
+}
+
+.skill-main {
+  @include circle(80px);
+  background-color:#e93826;
+  color: #efefef;
+  position:relative;
+  z-index: 2;
+
+  &:hover ~ {
+    .skill-sub--0 {
+      left: -80px;
+    }
+
+    .skill-sub--1 {
+      left: 80px;
+    }
+  }
+}
+
+.skill-sub {
+  @include circle(80px);
+  background-color:#e93826;
+  color: #efefef;
+  position: absolute;
+  top:0;
+  left:0;
+  font-size: 20px;
+  transition: all 0.5s cubic-bezier(0.935, 0, 0.34, 1.33);
+
+}
+
