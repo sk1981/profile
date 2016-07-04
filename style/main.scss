@@ -1,4 +1,6 @@
 $main-content-width: 900px;
+$subskill-shift: 70px;
+
 body {
   margin: 0;
   background-color: #f2e2d9;
@@ -13,12 +15,11 @@ body {
 
 
 .container {
-  width: $main-content-width;
-  margin: auto;
+  max-width: $main-content-width;
   box-shadow: 1px 20px 30px 0 #000;
   min-height: 100vh;
   background-color: rgba(#F8F9F8, 0.9);
-  margin-top: -20px;
+  margin: -20px auto auto;
   padding: 15px;
 }
 
@@ -27,7 +28,7 @@ header {
 }
 
 .header-info {
-  width: $main-content-width;
+  max-width: $main-content-width;
   margin: auto;
 }
 
@@ -41,45 +42,64 @@ header {
   padding-top: 10px;
 }
 
+.skills-info {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
 .skill {
   position:relative;
-  margin: 80px;
+  margin: 40px 80px;
+  max-width: 50%;
 }
-@mixin circle($radius) {
+@mixin circle($radius, $bg-color) {
   height: $radius;
   width: $radius;
-  //border: 8px solid;
-  border-radius: $radius/2;
+  background-color: $bg-color;
+  //border: 8px solid $bg-color;
+  border-radius: $radius;
   line-height:$radius;
+  border: 0px solid rgba(255, 255, 255, 0);
   text-align:center;
 }
 
 .skill-main {
-  @include circle(80px);
-  background-color:#e93826;
+  @include circle(80px, #e93826);
   color: #efefef;
   position:relative;
   z-index: 2;
 
   &:hover ~ {
     .skill-sub--0 {
-      left: -80px;
+      left: $subskill-shift;
+      top: $subskill-shift;
     }
 
     .skill-sub--1 {
-      left: 80px;
+      left: -$subskill-shift;
+      top: $subskill-shift;
+    }
+
+    .skill-sub--2 {
+      left: -$subskill-shift;
+      top: -$subskill-shift;
+    }
+
+    .skill-sub--3 {
+      left: $subskill-shift;
+      top: -$subskill-shift;
     }
   }
 }
 
 .skill-sub {
-  @include circle(80px);
-  background-color:#e93826;
+  @include circle(80px, #e93826);
   color: #efefef;
   position: absolute;
   top:0;
   left:0;
-  font-size: 20px;
+  font-size: 16px;
   transition: all 0.5s cubic-bezier(0.935, 0, 0.34, 1.33);
 
 }

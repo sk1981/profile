@@ -23,11 +23,18 @@ html(lang='en')
     script(src='https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js')
     script(src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js')
     link(href="https://fonts.googleapis.com/css?family=Droid+Sans|Open+Sans|Open+Sans+Condensed:300|PT+Sans+Narrow|Roboto|Trocchi", rel="stylesheet")
+    style.
+      .skill {
+        filter: url("#gooey");
+      }
   body
     -
-      var skills = [{name: "Java", level: "80", subSkills: [{name: "Collections", level: "80"}, {name: "Concurrency", level}] },
-                    {name: "Javascript", level: "100", subSkills: [{name: "ES6", level: "100"}, {name: "ReactJS", level}] }]
-    header
+      var skills = [{name: "Java", level: "80", subSkills: [{name: "Collections", level: "80"}, {name: "Concurrency", level: 0},  {name: "IO", level: 0 }, {name: "Core", value: "2"}] },
+                    {name: "Javascript", level: "100", subSkills: [{name: "ES6", level: "100"}, {name: "ReactJS", level}] },
+                    {name: "Tools", level: "100", subSkills: [{name: "Gulp", level: "100"}, {name: "Webpack", level}] },
+                    {name: "Testing", level: "100", subSkills: [{name: "Protractor", level: "100"}, {name: "Jasmine", level: "22"}, {name: "BDD/Cucumber", level: "22"}] }]
+
+header
       div.header-info
         h1.header-main Naval Singh
     main.container
@@ -46,3 +53,7 @@ html(lang='en')
               div.skill-main #{skill.name}
               each subSkills, index in skill.subSkills
                 div.skill-sub(class="skill-sub--#{index}") #{subSkills.name}
+  filter#gooey
+    <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+    <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+    <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
