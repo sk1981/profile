@@ -53,6 +53,29 @@ header
               div.skill-main #{skill.name}
               each subSkills, index in skill.subSkills
                 div.skill-sub(class="skill-sub--#{index}") #{subSkills.name}
+      section.experience
+        section.experience-header.section--header Experience
+        section.experience-info
+          div.experience-info__detail
+            div.experience-info__title Vice President, Web @Goldman Sachs
+            div.
+              As a part of the Core Web Team within Goldman Sachs manage external client facing sites like GS360 and GS.com.
+              Also, worked on and managed different internal web frameworks and Javascript tooling used by different teams within GS.
+            div.
+              Built out various applications, including business sensitive applications like Marquee Quickpoll and Marquee Developer Tools and extremely critical firmwide applications like GS Uitoolkit and GS CDN.
+            div.
+              Provided trainings to different teams in Asia region about different internal and external frameworks, following best practices and latest web trends in web development.
+          div.experience-info__detail
+            div.experience-info__title Vice President, GS360 @Goldman Sachs
+            div.
+              Responsible for enhancing and updating Goldman's client facing portal GS360.
+            div.
+              Also worked as local interface for any Asia related requirements.
+          div.experience-info__detail
+            div.experience-info__title Senior Software Engineer, ASAP, @Tavant
+            div.
+                Worked on Loan Management system call ASAP
+
   filter#gooey
     <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
     <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />

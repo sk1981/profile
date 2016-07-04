@@ -7,6 +7,7 @@ body {
   color: #526072;
   font-family: 'PT Sans Narrow', sans-serif;
   font-size: 20px;
+  line-height: 1.6;
 }
 
 .header-main {
@@ -101,6 +102,13 @@ header {
   left:0;
   font-size: 16px;
   transition: all 0.5s cubic-bezier(0.935, 0, 0.34, 1.33);
+}
 
+.experience-info__detail {
+  padding: 20px 0;
+}
+
+.experience-info__title {
+  font-weight: bold;
 }
 
