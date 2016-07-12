@@ -1,5 +1,8 @@
+@import "~normalize.css/normalize.css";
+
 $main-content-width: 900px;
 $subskill-shift: 70px;
+$body-color: #848484;
 
 body {
   margin: 0;
@@ -8,6 +11,10 @@ body {
   font-family: 'PT Sans Narrow', sans-serif;
   font-size: 20px;
   line-height: 1.6;
+  //background-color: #262d35;
+  //background-image: radial-gradient(50% 100%, ellipse farthest-corner, #2a12ff, #000036 100%);
+  //background-image: -webkit-radial-gradient(50% 100%, ellipse farthest-corner, rgb(42, 18, 255), rgb(0, 0, 54) 100%);
+  //background-attachment: fixed;
 }
 
 .header-main {
@@ -19,7 +26,7 @@ body {
   max-width: $main-content-width;
   box-shadow: 1px 20px 30px 0 #000;
   min-height: 100vh;
-  background-color: rgba(#F8F9F8, 0.9);
+  background-color: rgba(#F8F9F8, 1);
   margin: -20px auto auto;
   padding: 15px;
 }
@@ -110,5 +117,14 @@ header {
 
 .experience-info__title {
   font-weight: bold;
+}
+
+
+#canvasBg {
+  position:fixed;
+  top:0;
+  left:0;
+  z-index: -1;
+  background-image: radial-gradient(ellipse farthest-corner at 50% 100%, #1B1B1B 0%, #4c4c4c 70%, #727272 100%);
 }
 

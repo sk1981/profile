@@ -34,6 +34,8 @@ html(lang='en')
                     {name: "Tools", level: "100", subSkills: [{name: "Gulp", level: "100"}, {name: "Webpack", level}] },
                     {name: "Testing", level: "100", subSkills: [{name: "Protractor", level: "100"}, {name: "Jasmine", level: "22"}, {name: "BDD/Cucumber", level: "22"}] }]
 
+    canvas#canvasBg
+      div.canvas-fallback
     header
       div.header-info
         h1.header-main Naval Singh
@@ -202,7 +204,3 @@ html(lang='en')
             div.project-info__detail
             h2.project-info__title IIT Bombay, 2001-2005
             h2.project-info__title Seth M.R. Jaipuria School, Lucknow, 1992-2000
-  filter#gooey
-    <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-    <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
-    <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
