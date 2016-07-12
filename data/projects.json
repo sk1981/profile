@@ -1,0 +1,108 @@
+[
+  {
+    "title": "Marquee QuickPoll",
+    "description": "Marquee Quickpoll is a goldman sachs application which allows a salesperson to to send out simple and easy to use polls to clients based around key market events.",
+    "responsibilities": [
+      "Built out the frontend and backend components of the App",
+      "Worked with the business sponsors to flesh out the app requirements",
+      "Liaised with different departments like compliance, legal and helpdesk to ensure that are production rollout requirements were met."
+    ],
+    "technologies": [
+      "Frontend Components - React, Reflux, Highcharts",
+      "Styling - Bootstrap, SCSS, CSS3 for styling the components",
+      "Restservices - Dropwizard in Java 8",
+      "Websockets",
+      "Build - Gradle, Browserify and Gulp",
+      "Testing - Protractor, Karma, Jasmine, PhantomJS and JUnit",
+      "Usage Analytics - ELK Stack",
+      "Database - MongoDB"
+    ]
+  },
+  {
+    "title": "Marquee API Site",
+    "description": "Marquee API allows external clients use GS APIs as a part of their own applications by registering their applications using OAuth2 flow.",
+    "responsibilities": [
+      "Built out the frontend and backend components of the App",
+      "Worked with the business sponsors to flesh out the app requirements",
+      "Liaised with different departments like compliance, legal and helpdesk to ensure that are production rollout requirements were met."
+    ],
+    "technologies": [
+      "Frontend Components - React, Redux using ES 2015 (Babel)",
+      "Styling - Bootstrap, SCSS, CSS3",
+      "Restservices - Dropwizard using Java 8",
+      "Authentication - JWT/OAuth2",
+      "Build - Gradle, Browserify and Gulp",
+      "Testing - Protractor, JSDom, Mocha, Enzyme and JUnit",
+      "MongoDB"
+    ]
+  },
+  {
+    "title": "GS CDN",
+    "description": "GS CDN is an internal content delivery network designed to serve static content in an easy, efficient and reliable manner. GSCDN served more than 5 million requests daily.",
+    "responsibilities": [
+      "Designed and Developed the frontend and backend components of the App",
+      "Managed the set of libraries served by GSCDN",
+      "Provided guidance around use of different libraries"
+    ],
+    "technologies": [
+      "Frontend Components - Bootstrap and jQuery",
+      "Styling - Bootstrap, LESS, CSS3",
+      "Restservices - SpringBoot using Java 7",
+      "Build - Gradle, Gulp",
+      "Testing - Protractor, JUnit and Angular Mock",
+      "Database - PostgreSQL",
+      "Webserver - Apache, replaced by NGINX",
+      "NGINX Plugins - C (Authentication and Authorization plugins)"
+    ]
+  },
+  {
+    "title": "UIToolkit",
+    "description": "UItoolkit a library to standardize the styling across all GS application and provided reusable themes and components.",
+    "responsibilities": [
+      "Developed the first version of the toolkit",
+      "Provided guidance to teams using the library"
+    ],
+    "technologies": [
+      "Frontend Components - AngularJS, UI Router, D3 and RequireJS",
+      "Styling - Bootstrap, SCSS, CSS3",
+      "Restservices - Express JS",
+      "Build - Gulp",
+      "Testing - CasperJS",
+      "Database - MongoDB"
+    ]
+  },
+  {
+    "title": "Condor",
+    "description": "Condor is a SOA based matching and alerting framework used for sending our GS specific research to clients based on their interest",
+    "responsibilities": [
+      "Owned the product",
+      "Enhanced the platform by implementing different features"
+    ],
+    "technologies": [
+      "Frontend Components - JSP",
+      "Styling - CSS",
+      "Backend Services - Internal Framework based on Java",
+      "Testing - Junit",
+      "Database - Sybase",
+      "Webserver - Apache Tomcat"
+    ]
+  },
+  {
+    "title": "GS 360 re-design",
+    "description": "Redesigned parts of GS360 framework provide a modern look and feel for the site",
+    "responsibilities": [
+      "Enhanced the styling of different parts of site using just CSS.",
+      "Worked on the internal JS library",
+      "Created a new Emerging Markets page"
+    ],
+    "technologies": [
+      "Frontend Components - JSP, Internal Javascript Framework",
+      "Styling - CSS",
+      "Backend Services - Internal Framework based on Java",
+      "Testing - Junit",
+      "Database - Sybase",
+      "Webserver - Apache Tomcat"
+    ]
+  }
+]
+

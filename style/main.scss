@@ -32,6 +32,9 @@ body {
 }
 
 header {
+  // To create a new context for margin collapse
+  overflow: auto;
+  background-color: #f8f9f8;
   box-shadow: 0 16px 6px -6px #666;
 }
 

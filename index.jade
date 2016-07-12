@@ -8,20 +8,6 @@ html(lang='en')
     meta(name='author', content='')
     link(rel='icon', href='#{pathToAssets}/docs/favicon.ico')
     title Profile
-    // Bootstrap core CSS
-    link(href='#{pathToAssets}/dist/css/bootstrap.min.css', rel='stylesheet')
-    // Custom styles for this template
-    link(href='#{pathToSelectedTemplateWithinBootstrap}/starter-template.css', rel='stylesheet')
-    // Just for debugging purposes. Don't actually copy these 2 lines!
-    //if lt IE 9
-    script(src='#{pathToAssets}/docs/assets/js/ie8-responsive-file-warning.js')
-    script(src='#{pathToAssets}/docs/assets/js/ie-emulation-modes-warning.js')
-    // IE10 viewport hack for Surface/desktop Windows 8 bug
-    script(src='#{pathToAssets}/docs/assets/js/ie10-viewport-bug-workaround.js')
-    // HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
-    //if lt IE 9
-    script(src='https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js')
-    script(src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js')
     link(href="https://fonts.googleapis.com/css?family=Droid+Sans|Open+Sans|Open+Sans+Condensed:300|PT+Sans+Narrow|Roboto|Trocchi", rel="stylesheet")
     style.
       .skill {
@@ -29,178 +15,18 @@ html(lang='en')
       }
   body
     -
-      var skills = [{name: "Java", level: "80", subSkills: [{name: "Collections", level: "80"}, {name: "Concurrency", level: 0},  {name: "IO", level: 0 }, {name: "Core", value: "2"}] },
-                    {name: "Javascript", level: "100", subSkills: [{name: "ES6", level: "100"}, {name: "ReactJS", level}] },
-                    {name: "Tools", level: "100", subSkills: [{name: "Gulp", level: "100"}, {name: "Webpack", level}] },
-                    {name: "Testing", level: "100", subSkills: [{name: "Protractor", level: "100"}, {name: "Jasmine", level: "22"}, {name: "BDD/Cucumber", level: "22"}] }]
-
+      var skills = require("./data/skills.json")
+      var projects = require("./data/projects.json")
     canvas#canvasBg
       div.canvas-fallback
-    header
-      div.header-info
-        h1.header-main Naval Singh
+    include ./views/header.jade
     main.container
-      section.about
-        div.about-header.section--header About Me
-        div.about-info.
-          (Temp text : to be improved) I am a full stack web developer currently working in Bengaluru, India.
-          I have more than 8.5 years of experience in designing production facing web applications using frameworks likes ReactJS and AngularJS or using pure Javascript wherever needed.
-
-          I am a firm believer in following industry standard best practices like responsive web design, graceful degradation and use of accessibility concepts.
-      section.skills
-        div.skills-header.section--header Skills
-        div.skills-info
-          each skill in skills
-            div.skill
-              div.skill-main #{skill.name}
-              each subSkills, index in skill.subSkills
-                div.skill-sub(class="skill-sub--#{index}") #{subSkills.name}
-      section.experience
-        div.experience-header.section--header Experience
-        div.experience-info
-          div.experience-info__detail
-            h2.experience-info__title Vice President, Web @Goldman Sachs
-            div.
-              As a part of the Core Web Team within Goldman Sachs manage external client facing sites like GS360 and GS.com.
-              Also, worked on and managed different internal web frameworks and Javascript tooling used by different teams within GS.
-            div.
-              Built out various applications, including business sensitive applications like Marquee Quickpoll and Marquee Developer Tools and extremely critical firmwide applications like GS Uitoolkit and GS CDN.
-            div.
-              Provided trainings to different teams in Asia region about different internal and external frameworks, following best practices and latest web trends in web development.
-          div.experience-info__detail
-            h2.experience-info__title Vice President, GS360 @Goldman Sachs
-            div.
-              Responsible for enhancing and updating Goldman's client facing portal GS360.
-            div.
-              Also worked as local interface for any Asia related requirements.
-          div.experience-info__detail
-            h2
-            .experience-info__title Senior Software Engineer, ASAP, @Tavant
-            div.
-                Worked as senior developer on Loan Management system called ASAP and was responsible for building out different modules in the project.
-      section.project
-        div.project-header.section--header Major Projects
-        div.project-info
-          div.project-info__detail
-          h2.project-info__title Marquee QuickPoll
-          div.
-            Marquee Quickpoll is a goldman sachs application which allows a salesperson to to send out simple and easy to use polls to clients based around key market events.
-          div
-            h3 Responsibilities
-            ul
-              li Built out the frontend and backend components of the App
-              li Worked with the business sponsors to flesh out the app requirements
-              li Liaised with different departments like compliance, legal and helpdesk to ensure that are production rollout requirements were met.
-            h3 Technologies
-            ul
-              li Frontend Components - React, Reflux, Highcharts
-              li Styling - Bootstrap, SCSS, CSS3 for styling the components
-              li Restservices - Dropwizard in Java 8
-              li Websockets
-              li Build - Gradle, Browserify and Gulp
-              li Testing - Protractor, Karma, Jasmine, PhantomJS and JUnit
-              li Usage Analytics - ELK Stack
-              li Database - MongoDB
-          div.project-info
-            div.project-info__detail
-            h2.project-info__title Marquee API Site
-            div.
-              Marquee API allows external clients use GS APIs as a part of their own applications by registering their applications using OAuth2 flow.
-            div
-              h3 Responsibilities
-              ul
-                li Built out the frontend and backend components of the App
-                li Worked with the business sponsors to flesh out the app requirements
-                li Liaised with different departments like compliance, legal and helpdesk to ensure that are production rollout requirements were met.
-              h3 Technologies
-              ul
-                li Frontend Components - React, Redux using ES 2015 (Babel)
-                li Styling - Bootstrap, SCSS, CSS3
-                li Restservices - Dropwizard using Java 8
-                li Authentication - JWT/OAuth2
-                li Build - Gradle, Browserify and Gulp
-                li Testing - Protractor, JSDom, Mocha, Enzyme and JUnit
-                li Database - MongoDB
-          div.project-info
-            div.project-info__detail
-            h2.project-info__title GS CDN
-            div.
-              GS CDN is an internal content delivery network designed to serve static content in an easy, efficient and reliable manner. GSCDN
-              served more than 5 million requests daily.
-            div
-              h3 Responsibilities
-              ul
-                li Designed and Developed the frontend and backend components of the App
-                li Managed the set of libraries served by GSCDN
-                li Provided guidance around use of different libraries
-              h3 Technologies
-              ul
-                li Frontend Components - AngularJS, UI Router, D3 and RequireJS
-                li Styling - Bootstrap, SCSS, CSS3
-                li Restservices - Express JS
-                li Build - Gulp
-                li Testing - CasperJS
-                li Database - PostgreSQL
-          div.project-info
-            div.project-info__detail
-            h2.project-info__title UIToolkit
-            div.
-              UItoolkit a library to standardize the styling accorss all GS application and provided resuable themes and components.
-            div
-              h3 Responsibilities
-              ul
-                li Developed the first version of the toolkit
-                li Provided guidance to teams using the library
-              h3 Technologies
-              ul
-                li Frontend Components - Bootstrap and jQuery
-                li Styling - Bootstrap, LESS, CSS3
-                li Restservices - SpringBoot using Java 7
-                li Build - Gradle, Gulp
-                li Testing - Protractor, JUnit and Angular Mock
-                li Database - PostgreSQL
-                li Webserver - Apache, replaced by NGINX
-                li NGINX Plugins - C (Authentication and Authorization plugins)
-          div.project-info
-            div.project-info__detail
-            h2.project-info__title Condor
-            div.
-              Condor is a SOA based matching and alerting framework used for sending our GS specific research to clients based on their interest
-            div
-              h3 Responsibilities
-              ul
-                li Owned the product
-                li Enhanced the platform by implementing different features
-              h3 Technologies
-              ul
-                li Frontend Components - JSP
-                li Styling - CSS
-                li Backend Services - Internal Framework based on Java
-                li Testing - Junit
-                li Database - Sybase
-                li Webserver - Apache Tomcat
-          div.project-info
-            div.project-info__detail
-            h2.project-info__title GS 360 re-design
-            div.
-              Redesigned parts of GS360 framework provide a modern look and feel for the site
-            div
-              h3 Responsibilities
-              ul
-                li Enhanced the styling of different parts of site using just CSS.
-                li Worked on the internal JS library
-                li Created a new Emerging Markets page
-              h3 Technologies
-              ul
-                li Frontend Components - JSP, Internal Javascript Framework
-                li Styling - CSS
-                li Backend Services - Internal Framework based on Java
-                li Testing - Junit
-                li Database - Sybase
-                li Webserver - Apache Tomcat
-        section.project
-          div.project-header.section--header Education
-          div.project-info
-            div.project-info__detail
-            h2.project-info__title IIT Bombay, 2001-2005
-            h2.project-info__title Seth M.R. Jaipuria School, Lucknow, 1992-2000
+      include ./views/about
+      include ./views/skills
+      +displaySkills(skills)
+      include ./views/experience
+      +displayExperiennce
+      include ./views/projects
+      +displayProjects(projects)
+      include ./views/education
+      +displayEducation

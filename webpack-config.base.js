@@ -32,10 +32,18 @@ module.exports = {
         loader: ExtractTextPlugin.extract("style-loader", "css-loader!!postcss-loader!sass-loader")
       },
       {
-        test: /.jade?$/,
+        test: /\.json?$/,
+        exclude: /node_modules/,
+        loader: 'json'
+      },
+      {
+        test: /jade?$/,
         loader: 'jade-loader',
         exclude: /node_modules/,
-        options: {}
+        testing: "zzz",
+        options: {testing: "xyz"},
+        query: {locals: {testing: "xssyz"}, pretty: true},
+        locals: {testing: "xyz"}
       }
     ]
   },

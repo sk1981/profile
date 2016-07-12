@@ -1,0 +1,70 @@
+[
+  {
+    "name": "Java",
+    "level": "80",
+    "subSkills": [
+      {
+        "name": "Collections",
+        "level": "80"
+      },
+      {
+        "name": "Concurrency",
+        "level": 0
+      },
+      {
+        "name": "IO",
+        "level": 0
+      },
+      {
+        "name": "Core",
+        "value": "2"
+      }
+    ]
+  },
+  {
+    "name": "Javascript",
+    "level": "100",
+    "subSkills": [
+      {
+        "name": "ES6",
+        "level": "100"
+      },
+      {
+        "name": "ReactJS",
+        "level": 95
+      }
+    ]
+  },
+  {
+    "name": "Tools",
+    "level": "100",
+    "subSkills": [
+      {
+        "name": "Gulp",
+        "level": "100"
+      },
+      {
+        "name": "Webpack",
+        "level": 80
+      }
+    ]
+  },
+  {
+    "name": "Testing",
+    "level": "100",
+    "subSkills": [
+      {
+        "name": "Protractor",
+        "level": "100"
+      },
+      {
+        "name": "Jasmine",
+        "level": "22"
+      },
+      {
+        "name": "BDD/Cucumber",
+        "level": "22"
+      }
+    ]
+  }
+]
