@@ -6,14 +6,12 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
-    app: ['./src/index', './style/main.scss', './index.jade'],
-    vendor: ['d3']
+    app: ['./src/index', './style/main.scss']
   },
   output: {
     path: path.join(__dirname, 'build'),
     libraryTarget: 'umd',
     filename: '[name]-bundle.js'
-    // publicPath: 'http://localhost:8080/build'
   },
   module: {
     loaders: [
@@ -39,11 +37,9 @@ module.exports = {
       {
         test: /jade?$/,
         loader: 'jade-loader',
+        // loader: ExtractTextPlugin.extract("jade-loader"),
         exclude: /node_modules/,
-        testing: "zzz",
-        options: {testing: "xyz"},
-        query: {locals: {testing: "xssyz"}, pretty: true},
-        locals: {testing: "xyz"}
+        query: {pretty: true}
       }
     ]
   },
