@@ -19,14 +19,14 @@ html(lang='en')
       var projects = require("./data/projects.json")
     canvas#canvasBg
       div.canvas-fallback
-    include ./views/header.jade
+    include ./templates/header.jade
     main.container
-      include ./views/about
-      include ./views/skills
+      include ./templates/about
+      include ./templates/skills
       +displaySkills(skills)
-      include ./views/experience
+      include ./templates/experience
       +displayExperiennce
-      include ./views/projects
+      include ./templates/projects
       +displayProjects(projects)
-      include ./views/education
+      include ./templates/education
       +displayEducation
