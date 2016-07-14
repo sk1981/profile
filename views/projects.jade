@@ -1,18 +1,5 @@
 mixin displayProjects(projects)
-  section.project
+  section.projects
     div.project-header.section--header Major Projects
-    each project in projects
-      div.project-info
-        div.project-info__detail
-        h2.project-info__title #{project.title}
-        div.
-          #{project.description}
-        div
-          h3 Responsibilities
-          ul
-            each responsiblity in project.responsibilities
-              li #{responsiblity}
-          h3 Technologies
-          ul
-            each technology in project.technologies
-              li #{technology}
+    label.filter-project Filter By Technology:
+      input.filter-project__input(type="text")
