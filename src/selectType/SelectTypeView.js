@@ -12,9 +12,9 @@ function view(data, handler) {
   ]);
 }
 
-function update(model, action) {
+function update(model, action, listeners) {
   if(action.type === InputView.actions.ACTIVE_CHANGE || action.type === InputView.actions.TEXT_CHANGE) {
-    model = InputView.update(model, action);
+    model = InputView.update(model, action, listeners);
   } else {
     model = SelectDropdownView.update(model, action);
   }

@@ -1,6 +1,7 @@
+import snabbdom from 'snabbdom';
 import ProjectCreator from './ProjectCreator';
-const projectData = require("../../data/projects.json");
-var snabbdom = require('snabbdom');
+import projectData  from '../../data/projects.json';
+
 
 var patch = snabbdom.init([ // Init patch function with choosen modules
   require('snabbdom/modules/class'), // makes it easy to toggle classes
@@ -14,5 +15,4 @@ const render = (projectCreator) => {
   patch(document.getElementsByClassName('projects')[0], projectDataVNode);
 };
 const projectCreator = new ProjectCreator(projectData);
-
 render(projectCreator);

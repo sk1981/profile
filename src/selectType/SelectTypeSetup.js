@@ -8,12 +8,19 @@ var patch = snabbdom.init([ // Init patch function with choosen modules
 ]);
 
 
-function main(initState, element, {view, update}) {
+function main(initState, element, {view, update}, listeners) {
   const newVnode = view(initState, event => {
-    const newState = update(initState, event);
-    main(newState, newVnode, {view, update});
-  });
+    const newState = update(initState, event, listeners);
+    main(newState, newVnode, {view, update}, listeners);
+  }, listeners);
   patch(element, newVnode);
 }
 
-main({active: false, options: ["ReactJS", "AngularJS", "NGINX"]}, document.getElementsByClassName('select-type-wrapper')[0], SelectTypeView);
+
+export default {
+  loadSelectSetup(parent, options =[], listeners ={}) {
+    const initModel = {active: false, options: options};
+    // main({active: false, options: ["ReactJS", "AngularJS", "NGINX"]}, document.getElementsByClassName('select-type-wrapper')[0], SelectTypeView);
+    main(initModel, parent, SelectTypeView, listeners);
+  }
+}

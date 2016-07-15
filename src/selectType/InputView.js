@@ -32,7 +32,7 @@ function view(model, handler) {
   ])
 }
 
-function update(model, actionData) {
+function update(model, actionData, listeners) {
   if (actionData.type === actions.TEXT_CHANGE) {
     model.text = actionData.text;
   }
@@ -42,6 +42,8 @@ function update(model, actionData) {
     if(model.active === false && model.options.indexOf(model.text) < 0) {
       model.text = '';
     }
+    // Fire select listener on active change
+    if(listeners.onSelected) listeners.onSelected(model.text)
   }
   return model;
 }

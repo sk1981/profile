@@ -2,19 +2,12 @@
   display: flex;
   padding: 5px;
   align-items: center;
-}
 
-.filter-project__input {
-  flex: 1; // ensure text takes up the full space
-  padding: 4px; // padding inside text
-  margin: 0 10px;
-  // standard input styling
-  border-radius: 4px;
-  box-shadow: none;
-  border: 1px solid #9c9c9c;
-  &:hover, &:focus {
-    outline: none;
-    border-color: #58427C;
+  > .select-type {
+    flex: 1;
   }
 }
 
+.filter-project__text {
+  padding-right: 5px;
+}

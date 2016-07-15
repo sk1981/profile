@@ -1,9 +1,14 @@
 // ~ is for resolving like modules
 @import "~normalize.css/normalize.css";
 @import "projects/experience-filter";
+@import "select-type/select-type";
+
 $main-content-width: 900px;
 $subskill-shift: 70px;
 $body-color: #848484;
+*, *:before, *:after {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
@@ -12,10 +17,6 @@ body {
   font-family: 'PT Sans Narrow', sans-serif;
   font-size: 20px;
   line-height: 1.6;
-  //background-color: #262d35;
-  //background-image: radial-gradient(50% 100%, ellipse farthest-corner, #2a12ff, #000036 100%);
-  //background-image: -webkit-radial-gradient(50% 100%, ellipse farthest-corner, rgb(42, 18, 255), rgb(0, 0, 54) 100%);
-  //background-attachment: fixed;
 }
 
 .header-main {

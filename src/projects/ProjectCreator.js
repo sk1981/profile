@@ -1,37 +1,38 @@
 var h = require('snabbdom/h');
 
-import debounce from 'lodash/debounce';
 import ProjectDataGenerator from './ProjectDataGenerator';
 import ProjectDataManager from './ProjectDataManager';
+import SelectTypeSetup from '../selectType/SelectTypeSetup'
 
 export default class ProjectCreator {
 
   constructor(projectData) {
-    this.debouncedFilterElements = debounce(this.filterElements.bind(this), 250);
-    this.filterValue = '-';
+    this.setupSelector = this.setupSelector.bind(this);
+    this.filterElements = this.filterElements.bind(this);
+    this.filterValue = '';
     this.projectData = projectData;
   }
 
-  filterElements(event) {
-    const newValue = this.filterInput.value;
-    if(newValue !== this.value) {
-      this.filterValue = newValue;
+  setupSelector() {
+    const tags = ProjectDataManager.getTagList(this.projectData);
+    SelectTypeSetup.loadSelectSetup(document.getElementsByClassName('filter-project_wrapper')[0], tags, {
+      onSelected: this.filterElements
+    });
+  }
+
+  filterElements(filterValue) {
+    if(filterValue !== this.filterValue) {
+      this.filterValue = filterValue;
       ProjectDataGenerator.render(ProjectDataManager.filterData(this.filterValue, this.projectData), this.filterValue);
     }
   }
 
-  createProject(projectData) {
+  createProject() {
     return h('div.projects', {}, [
       h('div.project-header.section--header', {},  'Major Projects'),
       h('label.filter-project', {}, [
-        h('span', {}, 'Filter By Technology'),
-        h('input.filter-project__input', {
-          type:"text",
-          on: {keydown: this.debouncedFilterElements},
-          hook: {
-            insert: (vnode) => { this.filterInput =  vnode.elm}
-          }
-        }, [])
+        h('span.filter-project__text', {}, 'Filter By Technology:'),
+        h('input.filter-project_wrapper', {hook: { insert: this.setupSelector}}, [])
       ]),
       ProjectDataGenerator.generateAllProjectData(ProjectDataManager.filterData(this.filterValue, this.projectData), this.filterValue)
     ]);
