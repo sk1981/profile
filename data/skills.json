@@ -1,23 +1,23 @@
 [
   {
     "name": "Java",
-    "level": "80",
+    "level": "90",
     "subSkills": [
       {
+        "name": "Core",
+        "value": 90
+      },
+      {
         "name": "Collections",
-        "level": "80"
+        "level": 90
       },
       {
         "name": "Concurrency",
-        "level": 0
+        "level": 90
       },
       {
-        "name": "IO",
-        "level": 0
-      },
-      {
-        "name": "Core",
-        "value": "2"
+        "name": "Design",
+        "level": 90
       }
     ]
   },
@@ -30,7 +30,37 @@
         "level": "100"
       },
       {
-        "name": "ReactJS",
+        "name": "DOM",
+        "level": 95
+      },
+      {
+        "name": "Object Oriented",
+        "level": 100
+      },
+      {
+        "name": "Performance",
+        "level": 95
+      }
+    ]
+  },
+  {
+    "name": "CSS3",
+    "level": "90",
+    "subSkills": [
+      {
+        "name": "Concepts",
+        "level": 90
+      },
+      {
+        "name": "Properties",
+        "level": 95
+      },
+      {
+        "name": "Animation",
+        "level": 100
+      },
+      {
+        "name": "Performance",
         "level": 95
       }
     ]
@@ -41,29 +71,129 @@
     "subSkills": [
       {
         "name": "Gulp",
-        "level": "100"
+        "level": 90
       },
       {
         "name": "Webpack",
         "level": 80
+      },
+      {
+        "name": "Browserify",
+        "level": 80
+      },
+      {
+        "name": "Maven",
+        "level": 70
       }
     ]
   },
   {
     "name": "Testing",
-    "level": "100",
+    "level": 75,
     "subSkills": [
       {
+        "name": "Unit",
+        "level": 90
+      },
+      {
+        "name": "Integration",
+        "level": 80
+      },
+      {
+        "name": "BDD (Cucumber)",
+        "level": 75
+      },
+      {
+        "name": "Load (JMeter)",
+        "level": 50
+      }
+    ]
+  },
+  {
+    "name": "ReactJS",
+    "level": 90,
+    "subSkills": [
+      {
+        "name": "Core",
+        "level": 90
+      },
+      {
+        "name": "Redux",
+        "level": 96
+      },
+      {
+        "name": "Router",
+        "level": 80
+      },
+      {
+        "name": "Enzyme/JSDom",
+        "level": 75
+      }
+    ]
+  },
+  {
+    "name": "AngularJS",
+    "level": 80,
+    "subSkills": [
+      {
+        "name": "Core",
+        "level": 80
+      },
+      {
+        "name": "Redux",
+        "level": 96
+      },
+      {
+        "name": "UI Router",
+        "level": 80
+      },
+      {
         "name": "Protractor",
-        "level": "100"
+        "level": 75
+      }
+    ]
+  },
+  {
+    "name": "Graphics/Visualization",
+    "level": 80,
+    "subSkills": [
+      {
+        "name": "SVG",
+        "level": 75
       },
       {
-        "name": "Jasmine",
-        "level": "22"
+        "name": "Canvas",
+        "level": 73
       },
       {
-        "name": "BDD/Cucumber",
-        "level": "22"
+        "name": "D3 (Core)",
+        "level": 75
+      },
+      {
+        "name": "Highcharts",
+        "level": 60
+      }
+    ]
+  },
+  {
+    "name": "Java Libraries",
+    "level": -1,
+    "subSkills": [
+      {
+        "name": "Dropwizard",
+        "level": 75
+      },
+      {
+        "name": "Spring",
+        "level": 50
+      },
+      {
+        "name": "Guava",
+        "level": 50
+      },
+      {
+        "name": "Highcharts",
+        "level": 60
       }
     ]
   }
