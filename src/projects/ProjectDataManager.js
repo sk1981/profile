@@ -12,29 +12,18 @@ export default {
     const filteredProjects = projectData.filter(p => {
       return p.tags !== undefined && p.tags.some(t => t.name.indexOf(filterData) > -1)
     });
+    //TODO : Is lenght = 0 fine ? or should we 
     return filteredProjects.length === 0 ? projectData : filteredProjects;
   },
 
   /**
    *
-   * Iterates over all project data and gets the list the of tags.
+   * Iterates over all technologies and gets list the of technologies.
    *
-   * Has to iterate of over 3 level array to get the data.
-   *
-   * Is done only once, so should be fine.
-   *
-   * @param projectData
+   * @param technologies
    * @returns {Array}
    */
-  getTagList(projectData) {
-    const tags = [];
-    projectData.forEach(project => {
-      if (project.tags !== undefined) {
-        project.tags.forEach(tag => {
-          tag.name.forEach(n => {if(tags.indexOf(n) < 0) tags.push(n)});
-        });
-      }
-    }, []);
-    return tags;
+  getTagList(technologies) {
+    return technologies.map(technology => technology.name)
   }
 }

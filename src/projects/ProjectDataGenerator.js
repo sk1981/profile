@@ -11,9 +11,20 @@ var patch = snabbdom.init([
  * Functions to generate the DOM for list of projects based on the provided project data
  */
 export default {
-  generateAllProjectData(allProjectData, filteredValue) {
+
+  renderTechnologyInfo(technologies, filterValue) {
+    const technology = technologies.filter(technology => technology.name === filterValue);
+    console.log("--" + technology[0]);
+    if(technology.length > 0) {
+      return h('div.technology-description', {}, technology[0].description);
+    } else {
+      return h('div.technology-description', {}, '');
+    }
+  },
+
+  generateAllProjectData(allProjectData, technologies, filteredValue) {
     return h('div.project-list', {} , [
-      // h('div', {}, filteredValue),
+      this.renderTechnologyInfo( technologies, filteredValue),
       ...allProjectData.map(projectData => this.generateProjectData(projectData))
     ]);
   },
@@ -41,8 +52,8 @@ export default {
     return h('ul', {}, technologies.map(technology => h('li', {}, technology)))
   },
 
-  render(projectData, filter) {
-    const vNode = this.generateAllProjectData(projectData, filter);
+  render(projectData, technologies, filter) {
+    const vNode = this.generateAllProjectData(projectData, technologies, filter);
     patch(document.getElementsByClassName('project-list')[0], vNode);
   }
 }

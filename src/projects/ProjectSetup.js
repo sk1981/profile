@@ -1,6 +1,7 @@
 import snabbdom from 'snabbdom';
 import ProjectCreator from './ProjectCreator';
 import projectData  from '../../data/projects.json';
+import TechnologyExperience  from './TechnologyExperience';
 
 
 var patch = snabbdom.init([ // Init patch function with choosen modules
@@ -14,5 +15,5 @@ const render = (projectCreator) => {
   const projectDataVNode = projectCreator.createProject(projectData);
   patch(document.getElementsByClassName('projects')[0], projectDataVNode);
 };
-const projectCreator = new ProjectCreator(projectData);
+const projectCreator = new ProjectCreator(projectData, TechnologyExperience.technologies);
 render(projectCreator);
