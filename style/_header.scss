@@ -1,0 +1,21 @@
+.header-main {
+  font-family: 'Trocchi', cursive;
+}
+
+header {
+  // To create a new context for margin collapse
+  overflow: auto;
+  background-color: #f8f9f8;
+  box-shadow: 0 16px 6px -6px #666;
+}
+
+.header-info {
+  max-width: $main-content-width;
+  margin: auto;
+}
+
+.section--header {
+  font-size: 30px;
+  border-bottom: 1px solid;
+  padding-top: 10px;
+}

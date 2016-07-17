@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  background-color: $main-content-bg-color;
+  color: #526072;
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: $main-content-width;
+  box-shadow: 1px 20px 30px 0 #000;
+  min-height: 100vh;
+  background-color: rgba(#F8F9F8, 1);
+  margin: -20px auto auto;
+  padding: 15px;
+}
+
+#canvasBg {
+  position:fixed;
+  top:0;
+  left:0;
+  z-index: -1;
+  background-image: radial-gradient(ellipse farthest-corner at 50% 100%, #1B1B1B 0%, #4c4c4c 70%, #727272 100%);
+}
