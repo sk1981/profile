@@ -2,8 +2,3 @@ mixin displaySkills(skills)
   section.skills
     div.skills-header.section--header Skills
     div.skills-info
-      each skill in skills
-        div.skill
-          div.skill-main #{skill.name}
-          each subSkills, index in skill.subSkills
-            div.skill-sub(class="skill-sub--#{index}") #{subSkills.name}

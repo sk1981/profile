@@ -154,7 +154,7 @@
     ]
   },
   {
-    "name": "Graphics/Visualization",
+    "name": "Graphics",
     "level": 80,
     "subSkills": [
       {
@@ -176,8 +176,8 @@
     ]
   },
   {
-    "name": "Java Libraries",
-    "level": -1,
+    "name": " Libraries",
+    "level": 50,
     "subSkills": [
       {
         "name": "Dropwizard",
