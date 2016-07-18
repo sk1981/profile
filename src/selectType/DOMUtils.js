@@ -5,10 +5,14 @@ import h from 'snabbdom/h';
  */
 export default {
   highlightCharacters(text ='', highlight) {
-    const textArray = text.split(highlight);
+    // brackets to ensure positive look ahead
+    const textSearchRegex = new RegExp(`(${highlight})`, "ig");
+    const highlightTextLower = highlight.toLowerCase();
+    const textArray = text.split(textSearchRegex);
     return textArray.reduce( (previous, current) => {
-      if(previous.length > 0) previous.push(h('em', {}, highlight));
-      previous.push(h('span', {}, current));
+      // If part of split string is same as te highlight wrap it in emphasis tag
+      const tagType = highlightTextLower === current.toLowerCase() ? 'em' : 'span';
+      previous.push(h(tagType, {}, current));
       return previous;
     }, [])
   }

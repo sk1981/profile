@@ -12,6 +12,9 @@ function view(data, handler) {
     highlightedOption = data.option;
   }
   return h('li.select-type__index', {
+    class: {
+      "select-type__index--focused": data.isFocused
+    },
     on: {
       mousedown: event => {
         handler({type: actions.OPTION_SELECTED, option: data.option})

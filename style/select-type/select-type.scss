@@ -60,3 +60,8 @@ $text-padding-hz: 8px;
     font-style: normal;
   }
 }
+
+.select-type__index--focused {
+  background-color: #8c8c8c;
+  color: #ddd;
+}
