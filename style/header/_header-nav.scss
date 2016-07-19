@@ -1,0 +1,32 @@
+.main-nav {
+  width: $main-content-width;
+  padding-bottom: 20px;
+}
+
+.main-nav__list {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px; // Padding to ensure that menu items are above the content
+}
+
+.main-nav__index {
+  border-bottom: 1px solid $header-bg;
+  text-align: center;
+  overflow: hidden;
+
+  &:after {
+    padding: 0 10px;
+    content: "";
+    display: inline-block;
+    border-bottom: 1px solid $header-color;
+    width: 100%;
+    transform: translateX(-110%);
+    transition: all 0.5s;
+  }
+  &:hover {
+    &:after {
+      transform: translateX(0);
+    }
+  }
+}

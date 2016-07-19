@@ -1,0 +1,46 @@
+$section-header-height: 64px;
+
+.site-section {
+  position: relative;
+
+  &:before {
+    content:"";
+    display:inline-block;
+    height:0;
+    width:100%;
+    border-bottom: 1px solid #1A1B1A;
+    font-size: 10px;
+    position: absolute;
+    top: 31px;
+  }
+}
+.section--header {
+  display: inline-block;
+  font-size: 30px;
+  width: 160px; // Set a common width so that all section boxes match
+  height: $section-header-height;
+  line-height: $section-header-height;
+  position: relative;
+  margin:0;
+  padding: 0 5px;
+  background-color:$header-bg;
+  color: $header-color;
+}
+
+.section--header::after  {
+  content:'';
+  display:inline-block;
+  background-color:#1A1B1A;
+  height:0;
+  position:absolute;
+  top:0;
+  left:100%;
+  // Should be same as body bg so that they are not visible
+  border: #{$section-header-height/2} solid $body-bg;
+  border-left-color:$header-bg;
+  border-right-width:0;
+}
+
+.site-section__info, .filter-project {
+ margin-left: 200px;
+}

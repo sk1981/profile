@@ -1,3 +1,22 @@
 *, *:before, *:after {
   box-sizing: border-box;
 }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+
+  // em so that relative for header font size
+  // Bottom padding more as content below header should be closer to it compared to content above it
+  padding: 1.5em 0 0.5em 0;
+  font-family: $heading-font;
+  font-weight: 200;
+  .site-section__info & {
+    // First entry in a section should be closer to it as it does not has any content above it.
+    padding-top: 0.5em;
+  }
+}
+
+ul {
+  padding: 5px 0 10px 25px;
+  margin: 0;
+}

@@ -1,19 +1,19 @@
 import snabbdom from 'snabbdom';
 import ProjectCreator from './ProjectCreator';
-import projectData  from '../../data/projects.json';
 import TechnologyExperience  from './TechnologyExperience';
+const projectData  = require( '../../data/projects.json');
 
 
-var patch = snabbdom.init([ // Init patch function with choosen modules
-  require('snabbdom/modules/class'), // makes it easy to toggle classes
-  require('snabbdom/modules/props'), // for setting properties on DOM elements
-  require('snabbdom/modules/style'), // handles styling on elements with support for animations
-  require('snabbdom/modules/eventlisteners') // attaches event listeners
+var patch = snabbdom.init([
+  require('snabbdom/modules/class'),
+  require('snabbdom/modules/props'),
+  require('snabbdom/modules/style'),
+  require('snabbdom/modules/eventlisteners')
 ]);
 
 const render = (projectCreator) => {
   const projectDataVNode = projectCreator.createProject(projectData);
-  patch(document.getElementsByClassName('projects')[0], projectDataVNode);
+  patch(document.getElementsByClassName('projects-container')[0], projectDataVNode);
 };
 const projectCreator = new ProjectCreator(projectData, TechnologyExperience.technologies);
 render(projectCreator);

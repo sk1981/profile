@@ -30,9 +30,9 @@ export default class ProjectCreator {
 
   createProject() {
     return h('div.projects', {}, [
-      h('div.project-header.section--header', {},  'Major Projects'),
+      h('h2.project-header.section--header', {},  'Projects'),
       h('label.filter-project', {}, [
-        h('span.filter-project__text', {}, 'Filter By Technology:'),
+        h('h3.filter-project__text', {}, 'Filter By Technology:'),
         h('input.filter-project_wrapper', {hook: { insert: this.setupSelector}}, [])
       ]),
       ProjectDataGenerator.generateAllProjectData(ProjectDataManager.filterData(this.filterValue, this.projectData), this.technologies, this.filterValue)

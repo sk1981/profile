@@ -1,6 +1,6 @@
 .filter-project {
   display: flex;
-  padding: 5px;
+  padding: 5px 0;
   align-items: center;
 
   > .select-type {
@@ -10,4 +10,5 @@
 
 .filter-project__text {
   padding-right: 5px;
+  padding-top: 8px; // To align the text with the box
 }

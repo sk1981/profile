@@ -1,0 +1,39 @@
+@import "header-nav";
+header {
+  // To create a new context for margin collapse
+  overflow: auto;
+  background-color: $header-bg;
+  color: $header-color;
+  display: flex;
+  flex-direction: column;
+  height: 350px;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.header-info {
+  width: $main-content-width;
+  margin: auto;
+  position: relative;
+}
+
+.header-main__name {
+  padding: 10px 20px;
+  border: 1px solid $header-color;
+  font-size: 60px;
+}
+
+.header-main__title {
+  // Position properties to ensure that title aligns text border
+  position: absolute;
+  bottom: -5px;
+  left: 24px;
+  background-color: $header-bg;
+  font-family: $heading-font;
+  font-size: 16px;
+  font-weight: 200;
+}
+
+.section--header {
+  font-size: 30px;
+}

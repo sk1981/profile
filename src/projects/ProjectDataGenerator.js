@@ -14,12 +14,7 @@ export default {
 
   renderTechnologyInfo(technologies, filterValue) {
     const technology = technologies.filter(technology => technology.name === filterValue);
-    console.log("--" + technology[0]);
-    if(technology.length > 0) {
-      return h('div.technology-description', {}, technology[0].description);
-    } else {
-      return h('div.technology-description', {}, '');
-    }
+    return h('div.technology-description', {}, technology.length > 0 ?  technology[0].description : '');
   },
 
   generateAllProjectData(allProjectData, technologies, filteredValue) {
@@ -30,9 +25,9 @@ export default {
   },
 
   generateProjectData(projectData) {
-    return h('div.project-data', {}, [
-      h('h2.project-info__title', {}, projectData.title),
-      h('div.project-info__title', {}, projectData.description),
+    return h('div.project-data.site-section__info', {}, [
+      h('h2.project-data__title', {}, projectData.title),
+      h('div.project-data__title', {}, projectData.description),
       h('div', {}, [
         h('h3', {}, 'Responsibilities'),
         this.getResponsibilityList(projectData.responsibilities)

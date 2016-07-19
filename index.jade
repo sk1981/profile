@@ -8,17 +8,12 @@ html(lang='en')
     meta(name='author', content='')
     link(rel='icon', href='#{pathToAssets}/docs/favicon.ico')
     title Profile
-    link(href="https://fonts.googleapis.com/css?family=Droid+Sans|Open+Sans|Open+Sans+Condensed:300|PT+Sans+Narrow|Roboto|Trocchi", rel="stylesheet")
-    style.
-      .skill {
-        filter: url("#gooey");
-      }
+    //link(href="https://fonts.googleapis.com/css?family=Droid+Sans|Open+Sans|Open+Sans+Condensed:300|PT+Sans+Narrow|Roboto|Trocchi", rel="stylesheet")
+    link(href="https://fonts.googleapis.com/css?family=Asap|Averia+Sans+Libre|Fira+Sans|Nunito|Racing+Sans+One|Sansita+One|Source+Sans+Pro" rel="stylesheet")
   body
     -
-      var skills = require("./data/skills.json")
-      var projects = require("./data/projects.json")
-    canvas#canvasBg
-      div.canvas-fallback
+    //canvas#canvasBg
+    //div.canvas-fallback
     include ./templates/header.jade
     main.container
       include ./templates/about
