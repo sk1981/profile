@@ -16,12 +16,5 @@ body {
   margin: -20px auto auto;
   padding: 15px 25px;
   border-radius: 10px;
-}
-
-#canvasBg {
-  position:fixed;
-  top:0;
-  left:0;
-  z-index: -1;
-  background-image: radial-gradient(ellipse farthest-corner at 50% 100%, #1B1B1B 0%, #4c4c4c 70%, #727272 100%);
+  position: relative;
 }

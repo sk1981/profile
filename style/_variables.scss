@@ -3,6 +3,7 @@ $secondary-color: #1A161A;
 
 $header-bg: $secondary-color;
 $header-color: $primary-color;
+$header-bg-color-opaque: rgba($header-bg, 0.9);
 
 $body-bg: $primary-color;
 $body-color: $secondary-color;

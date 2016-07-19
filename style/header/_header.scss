@@ -1,8 +1,9 @@
 @import "header-nav";
+@import "animated-bg";
 header {
   // To create a new context for margin collapse
   overflow: auto;
-  background-color: $header-bg;
+  background-color: transparent;
   color: $header-color;
   display: flex;
   flex-direction: column;
@@ -19,8 +20,11 @@ header {
 
 .header-main__name {
   padding: 10px 20px;
-  border: 1px solid $header-color;
+  border: 2px solid $header-color;
   font-size: 60px;
+  background-color: $header-bg-color-opaque;
+  border-radius: 8px;
+  //box-shadow: 2px 2px 4px 0px;
 }
 
 .header-main__title {
