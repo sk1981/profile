@@ -30,7 +30,6 @@ $section-header-height: 64px;
 .section--header::after  {
   content:'';
   display:inline-block;
-  background-color:#1A1B1A;
   height:0;
   position:absolute;
   top:0;

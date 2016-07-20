@@ -6,9 +6,14 @@ header
       span.header-main__name Naval Singh
     div.header-main__title FullStack Developer
   nav.main-nav
+    -
+      const links= [
+        {display: "About", target: "about"},
+        {display: "Skills", target: "skills"},
+        {display: "Experience", target: "experience"},
+        {display: "Projects", target: "projects"},
+        {display: "Education", target: "education"}]
     ul.main-nav__list
-      li.main-nav__index About
-      li.main-nav__index Skills
-      li.main-nav__index Experience
-      li.main-nav__index Projects
-      li.main-nav__index Education
+      each link in links
+        li.main-nav__index
+          a.main-nav__link(href='\##{link.target}', data-target='#{link.target}') #{link.display}
