@@ -17,6 +17,9 @@ body {
   padding: 15px 25px;
   border-radius: 10px;
   position: relative;
+  @media screen and (max-width: $small-width) {
+    padding: 5px;
+  }
 }
 
 .site-section__info > h2:first-of-type {

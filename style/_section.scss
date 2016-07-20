@@ -13,6 +13,11 @@ $section-header-height: 64px;
     position: absolute;
     top: 31px;
   }
+
+  @media screen and (max-width: $small-width) {
+    // Add some padding in small mode, we don't need that in large mode as the headers are shifted to left
+    padding-bottom: 20px;
+  }
 }
 .section--header {
   display: inline-block;
@@ -25,6 +30,12 @@ $section-header-height: 64px;
   padding: 0 5px;
   background-color:$header-bg;
   color: $header-color;
+
+  @media screen and (max-width: $small-width) {
+    border-radius: 5px;
+    margin-left: 15px;
+    margin-bottom: 10px;
+  }
 }
 
 .section--header::after  {
@@ -38,11 +49,17 @@ $section-header-height: 64px;
   border: #{$section-header-height/2} solid $body-bg;
   border-left-color:$header-bg;
   border-right-width:0;
+  @media screen and (max-width: $small-width) {
+    display:none;
+  }
 }
 
 .site-section__info, .filter-project, .technology {
   margin-left: $main-content-info-shift;
   padding-left: 20px;
+  @media screen and (max-width: $small-width) {
+    margin-left: 0;
+  }
 }
 
 .technology__name {

@@ -1,5 +1,6 @@
 .main-nav {
-  width: $main-content-width;
+  max-width: $main-content-width;
+  width: 100%;
   padding-bottom: 20px;
   background-color: $header-bg-color-opaque;
 }
@@ -7,6 +8,7 @@
 .main-nav__list {
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   padding: 10px; // Padding to ensure that menu items are above the content
 }
@@ -22,12 +24,12 @@
     display: inline-block;
     border-bottom: 1px solid $header-color;
     width: 100%;
-    transform: translateX(-110%);
+    transform: scaleX(0);
     transition: all 0.5s;
   }
   &:hover {
     &:after {
-      transform: translateX(0);
+      transform: scaleX(1);
     }
   }
 }

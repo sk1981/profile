@@ -13,7 +13,8 @@ header {
 }
 
 .header-info {
-  width: $main-content-width;
+  max-width: $main-content-width;
+  width: 100%;
   margin: auto;
   position: relative;
 }
@@ -24,7 +25,9 @@ header {
   font-size: 60px;
   background-color: $header-bg-color-opaque;
   border-radius: 8px;
-  //box-shadow: 2px 2px 4px 0px;
+  @media screen and (max-width: $small-width) {
+    font-size: 40px;
+  }
 }
 
 .header-main__title {

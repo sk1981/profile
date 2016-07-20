@@ -1,5 +1,6 @@
 .filter-project {
   display: flex;
+  flex-wrap: wrap;
   padding: 5px 0 25px 20px;
   align-items: center;
 
@@ -11,6 +12,10 @@
 .filter-project__text {
   padding-right: 5px;
   padding-top: 8px; // To align the text with the box
+  @media screen and (max-width: $small-width) {
+    //ensure that text expand to full width on mobile so that input goes to a new line
+    width: 100%;
+  }
 }
 
 .technology {

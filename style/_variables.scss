@@ -1,19 +1,29 @@
-$primary-color:#F8F9F8;
-$secondary-color: #1A161A;
+// Breakpoints
+//$small-screen-width:
+$small-width: 600px;
 
+// Colour scales
+$primary-color:#F8F9F8;
+$secondary-color: #302a30;
+
+//Font scales
+$heading-font: 'Nunito', sans-serif;
+$body-font:  'Asap', sans-serif;
+
+// Header properties
 $header-bg: $secondary-color;
 $header-color: $primary-color;
 $header-bg-color-opaque: rgba($header-bg, 0.9);
 
+// Body properties
 $body-bg: $primary-color;
 $body-color: $secondary-color;
 
-$heading-font: 'Nunito', sans-serif;
-$body-font:  'Asap', sans-serif;
 
-
+// Main content properties
 $main-content-width: 900px;
 $main-content-info-shift: 200px;
-//$subskill-shift: 70px;
-//$body-color: #848484;
 $main-content-bg-color: #f8f9f8;
+
+//Z-indexes
+$dropdown-zindex: 1000;
