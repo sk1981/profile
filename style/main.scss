@@ -1,12 +1,23 @@
+// COMMON - variables, mixins
 @import "variables";
+
+//THIRD PARTY COMPONENTS
 // ~ is for resolving files in node_modules like local modules
 @import "~normalize.css/normalize.css";
+
+// SELF COMPONENTS
+@import "select-type/select-type";
+
+//DEFAULT/TOP LEVEL
 @import "base/defaults";
 @import "base/_top-level.scss";
+
+// PAGE LAYOUT
 @import "header/header";
 @import "section";
-@import "projects/experience-filter";
-@import "select-type/select-type";
-@import "skills/skills-circle";
+
+// SECTIONS - TOP TO BOTTOM
 @import "about";
+@import "skills/skills-circle";
 @import "experience";
+@import "projects/project-data";

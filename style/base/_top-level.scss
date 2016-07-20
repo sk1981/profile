@@ -18,3 +18,8 @@ body {
   border-radius: 10px;
   position: relative;
 }
+
+.site-section__info > h2:first-of-type {
+  // First entry in a section should be closer to it as it does not has any content above it.
+  padding-top: 0;
+}

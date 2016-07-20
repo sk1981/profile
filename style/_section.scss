@@ -41,6 +41,11 @@ $section-header-height: 64px;
   border-right-width:0;
 }
 
-.site-section__info, .filter-project {
- margin-left: 200px;
+.site-section__info, .filter-project, .technology {
+  margin-left: $main-content-info-shift;
+  padding-left: 20px;
+}
+
+.technology__name {
+  padding-top: 0;
 }
