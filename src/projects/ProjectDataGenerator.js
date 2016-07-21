@@ -21,7 +21,7 @@ export default {
       return h('div.technology', {}, [
         h('h2.technology__name', {}, name),
         h('div.technology__description', {}, description),
-        h('div.technology__filter-purpose', {}, `Some of the projects where I have used ${name} extensively are listed below`)
+        h('div.technology__filter-purpose', {}, `Some of the project(s) where I have used ${name} extensively are listed below`)
       ]);
     }
   },

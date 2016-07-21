@@ -9,6 +9,8 @@
   list-style: none;
   display: flex;
   flex-wrap: wrap;
+  font-size: 20px;
+  font-weight: 400;
   justify-content: space-between;
   padding: 10px; // Padding to ensure that menu items are above the content
 }
@@ -31,5 +33,13 @@
     &:after {
       transform: scaleX(1);
     }
+  }
+}
+
+// For navigation links we want to inherit from base styles
+.main-nav__link {
+  color: inherit;
+  &:hover, &:active, &:visited {
+    color: inherit;
   }
 }

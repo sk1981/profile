@@ -27,10 +27,10 @@ export function setUpBackground() {
     animator.updatePos();
     addResizeListener(() => {
       const size = getHeaderSize();
-      canvas.height = height;
-      canvas.width = width;
+      canvas.height = size.height;
+      canvas.width = size.width;
       canvasContext.fillStyle = 'white';
-      animator.reSize(width, height);
+      animator.reSize(size.width, size.height);
       animator.updatePos();
     });
   }

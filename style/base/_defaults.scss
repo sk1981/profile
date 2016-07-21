@@ -7,9 +7,13 @@ h1, h2, h3, h4, h5, h6 {
 
   // em so that relative for header font size
   // Bottom padding more as content below header should be closer to it compared to content above it
-  padding: 1.5em 0 0.5em 0;
+  padding: 0.5em 0 0.1em 0;
   font-family: $heading-font;
   font-weight: 200;
+}
+
+p {
+  margin: 0.2em 0 0.5em 0;
 }
 
 ul {
@@ -19,8 +23,8 @@ ul {
 
 a {
   text-decoration: none;
-  color: inherit;
+  color: #055D89;
   &:hover, &:active, &:visited {
-    color: inherit;
+    color: #055D89;
   }
 }

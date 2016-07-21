@@ -1,6 +1,3 @@
-
-
-
 /**
  * Class for calculating various attributes related to
  * star's data
@@ -12,10 +9,10 @@ export default class StarDataCalculator {
    * @returns {Map}
    */
   static GET_STAR_MAP() {
-    return new Map([
-      ["MEDIUM", {count: 60, radius: 2}],
-      ["SMALL", {count: 120, radius: 1}]
-    ]);
+    return {
+      "MEDIUM": {count: 40, radius: 2},
+      "SMALL": {count: 80, radius: 1}
+    };
   }
 
   /**
@@ -40,7 +37,8 @@ export default class StarDataCalculator {
    */
   getStarDataArr(starMap) {
     var starArr = [];
-    for (const stars of starMap.values()) {
+    for (const starKey in starMap) {
+      const stars = starMap[starKey];
       for (let i = 0; i < stars.count; i++) {
         const x = Math.floor(Math.random() * this.width);
         const y = Math.floor(Math.random() * this.height);
