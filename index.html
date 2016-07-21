@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="undefined/docs/favicon.ico">
+    <title>Profile</title>
+    <!--link(href="https://fonts.googleapis.com/css?family=Alegreya+Sans:300,400|Asap|Averia+Sans+Libre|Fira+Sans|Nunito|Racing+Sans+One|Sansita+One|Source+Sans+Pro" rel="stylesheet")-->
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:300,400|Nunito" rel="stylesheet">
+  <link href="app-styles.css" rel="stylesheet"></head>
+  <body>
+<header>
+  <canvas id="canvasBg">
+    <div class="canvas-fallback"></div>
+  </canvas>
+  <div class="header-info">
+    <h1 class="header-main"><span class="header-main__name">Naval Singh</span></h1>
+    <div class="header-main__title">FullStack Developer</div>
+  </div>
+  <nav class="main-nav">
+    <ul class="main-nav__list">
+      <li class="main-nav__index"><a href="#about" data-target="about" class="main-nav__link">About</a></li>
+      <li class="main-nav__index"><a href="#skills" data-target="skills" class="main-nav__link">Skills</a></li>
+      <li class="main-nav__index"><a href="#experience" data-target="experience" class="main-nav__link">Experience</a></li>
+      <li class="main-nav__index"><a href="#projects" data-target="projects" class="main-nav__link">Projects</a></li>
+      <li class="main-nav__index"><a href="#education" data-target="education" class="main-nav__link">Education</a></li>
+    </ul>
+  </nav>
+</header>
+    <main class="container">
+<section id="about" class="site-section about">
+  <h2 class="about-header section--header">About Me</h2>
+  <div class="site-section__info about-info">
+    <p>
+      I am a full stack web developer who specializes in building out well-designed applications that are scalable, functional and robust.
+      I have more than 8.5 years of experience in creating production facing web applications.
+    </p>
+    <p>I am proficient in Java, Javascript and CSS3 and in using tools and libraries like NodeJS, ReactJS, AngularJS, SpringBoot and so on.</p>
+    <p>I strive for the highest quality in my project and am a firm believer in best practices like Test Driven Development, responsive web design, graceful degradation and use of accessibility concepts.</p>
+  </div>
+</section>
+            <section id="skills" class="site-section skills">
+              <h2 class="skills-header section--header">Skills</h2>
+              <div class="site-section__info skills-info"></div>
+            </section>
+            <section id="experience" class="site-section experience">
+              <h2 class="experience-header section--header">Experience</h2>
+              <div class="site-section__info experience-info">
+                <h3 class="experience-info__title">Vice President, Web @<a href="http://www.goldmansachs.com/">Goldman Sachs</a></h3>
+                <p class="experience-info__text">Part of the Core Web Team which builds and manages client facing sites like <a href="https://marquee.gs.com">Marquee</a>, <a href="https://360.gs.com">GS360</a> and <a href="http://www.goldmansachs.com/">GS.com</a> and multiple firmwide sites and tools.</p>
+                <h3 class="experience-info__title">Vice President, GS360 @<a href="http://www.goldmansachs.com/">Goldman Sachs</a></h3>
+                <p class="experience-info__text">
+                  <div>Responsible for enhancing and updating Goldman's Client facing Web Portal - <a href="https://360.gs.com">GS360</a> .</div>
+                  <div>Also worked as local interface for any Asia related requirements.</div>
+                </p>
+                <h3 class="experience-info__title">Senior Software Engineer, ASAP, @<a href="http://www.tavant.com/">Tavant Technologies</a></h3>
+                <p class="experience-info__text">Worked as senior developer on Loan Management system called ASAP and was responsible for building out different modules in the project.</p>
+              </div>
+            </section>
+            <section id="projects" class="site-section projects">
+              <div class="projects-container"></div>
+            </section>
+            <section id="education" class="site-section education">
+              <h2 class="education-header section--header">Education</h2>
+              <div class="site-section__info education-info">
+                <div class="education-info__detail"></div>
+                <h2 class="education-info__title"><a href="http://www.iitb.ac.in/">IIT Bombay</a>, 2001-2005</h2>
+                <p>IIT Bombay is one of the top educational institutes in India, with an acceptance rate of less than 1%.</p>
+                <h2 class="education-info__title"><a href="http://www.jaipuriaschools.ac.in/">Seth M.R. Jaipuria School</a>, Lucknow, 1992-2000</h2>
+                <p>Completed my basic schooling from here.</p>
+              </div>
+            </section>
+    </main>
+  <script type="text/javascript" src="app-bundle.js"></script></body>
+</html>
