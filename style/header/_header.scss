@@ -1,0 +1,46 @@
+@import "header-nav";
+@import "animated-bg";
+header {
+  // To create a new context for margin collapse
+  overflow: auto;
+  background-color: transparent;
+  color: $header-color;
+  display: flex;
+  flex-direction: column;
+  height: 350px;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.header-info {
+  max-width: $main-content-width;
+  width: 100%;
+  margin: auto;
+  position: relative;
+}
+
+.header-main__name {
+  padding: 10px 20px;
+  border: 2px solid $header-color;
+  font-size: 60px;
+  background-color: $header-bg-color-opaque;
+  border-radius: 8px;
+  @media screen and (max-width: $small-width) {
+    font-size: 40px;
+  }
+}
+
+.header-main__title {
+  // Position properties to ensure that title aligns text border
+  position: absolute;
+  bottom: -15px;
+  left: 24px;
+  background-color: $header-bg;
+  font-family: $heading-font;
+  font-size: 16px;
+  font-weight: 200;
+}
+
+.section--header {
+  font-size: 30px;
+}

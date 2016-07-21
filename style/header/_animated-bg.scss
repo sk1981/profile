@@ -1,0 +1,8 @@
+#canvasBg {
+  position:absolute;
+  top:0;
+  left:0;
+  z-index: -1;
+  background-image: radial-gradient(ellipse farthest-corner at 50% 100%, $header-bg 40%,  lighten($header-bg, 10%) 100%);
+  box-shadow: 9px 0 9px 2px #1A161A;
+}

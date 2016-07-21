@@ -1,0 +1,19 @@
+header
+  canvas#canvasBg
+    div.canvas-fallback
+  div.header-info
+    h1.header-main
+      span.header-main__name Naval Singh
+    div.header-main__title FullStack Developer
+  nav.main-nav
+    -
+      const links= [
+        {display: "About", target: "about"},
+        {display: "Skills", target: "skills"},
+        {display: "Experience", target: "experience"},
+        {display: "Projects", target: "projects"},
+        {display: "Education", target: "education"}]
+    ul.main-nav__list
+      each link in links
+        li.main-nav__index
+          a.main-nav__link(href='\##{link.target}', data-target='#{link.target}') #{link.display}
