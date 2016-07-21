@@ -37,7 +37,6 @@ module.exports = {
       {
         test: /jade?$/,
         loader: 'jade-loader',
-        // loader: ExtractTextPlugin.extract("jade-loader"),
         exclude: /node_modules/,
         query: {pretty: true}
       }
@@ -50,7 +49,8 @@ module.exports = {
     new ExtractTextPlugin("[name]-styles.css"),
     new HtmlWebpackPlugin({
       template: './index.jade',
-      minify: false
+      minify: false,
+      inject: 'body'
     })
   ]
 };
