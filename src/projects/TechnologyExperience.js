@@ -28,9 +28,20 @@ export default {
       "Well versed in designing and managing CSS for large projects."
     },
     {
+      name: "NodeJS",
+      description: "Used NodeJS and Express JS to build out the services for managing User and App registration. " +
+      "For JSBuild, worked on creating parts of our firmwide Javascript Build Tool, which included interaction with Node IO and Streams." +
+      "Familiar with different NodeJS Tools like NVM, Forever, Node Gyp and so on."
+    },
+    {
       name: "jQuery",
       description: "Good knowledge of jQuery. Have used jQuery for variety of different tasks like Querying, DOM manipulation, Event handling and AJAX Calls. " +
       "Familiar with the best practices while using jQuery."
+    },
+    {
+      name: "CSS",
+      description: "Have been using CSS for the past 8 years. Have in depth knowledge of different CSS Concepts, properties and best practices. " +
+      "Well versed in designing and managing CSS for large projects."
     },
     {
       name: "SQL",
