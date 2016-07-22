@@ -35,6 +35,9 @@ $text-padding-hz: 8px;
   max-height: 250px;
   overflow-y: auto;
   z-index: $dropdown-zindex;
+  @media screen and (max-width: $small-width) {
+    box-shadow:none;
+  }
 }
 
 .select-type--active .select-type__dropdown {

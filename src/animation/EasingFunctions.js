@@ -5,9 +5,8 @@ export default {
     return this[functionName](timeDelta, startValue, totalValueChange, duration);
   },
 
-  linear(timeDelta, startValue, totalValueChange, duration) {
-    // timeDelta / duration -> slope, * total value change =  value Delta from 0
-    return totalValueChange * timeDelta / duration + startValue;
+  easeOutQuad: function(t, b, c, d) {
+    return -c * (t /= d) * (t - 2) + b;
   }
 }
  
