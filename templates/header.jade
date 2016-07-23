@@ -1,6 +1,6 @@
 header
   canvas#canvasBg
-    div.canvas-fallback
+    div.canvas-fallback(aria-label="Simple animation using Canvas")
   div.header-info
     h1.header-main
       span.header-main__name Naval Singh
@@ -13,7 +13,8 @@ header
         {display: "Experience", target: "experience"},
         {display: "Projects", target: "projects"},
         {display: "Education", target: "education"}]
-    ul.main-nav__list
+    //some counter arguments against role  : https://adobe-accessibility.github.io/Accessible-Mega-Menu/
+    ul.main-nav__list(role="navigation", aria-label="Main Menu")
       each link in links
         li.main-nav__index
           a.main-nav__link(href='\##{link.target}', data-target='#{link.target}') #{link.display}

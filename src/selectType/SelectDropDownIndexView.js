@@ -12,6 +12,9 @@ function view(data, handler) {
     highlightedOption = data.option;
   }
   return h('li.select-type__index', {
+    attrs: {
+      role:"option"
+    },
     class: {
       "select-type__index--focused": data.isFocused
     },

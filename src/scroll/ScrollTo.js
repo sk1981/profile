@@ -24,7 +24,7 @@ function getTotalTime(totalHeight) {
 /**
  * Gets the current scroll position of the browser
  *
- * @returns {Number|number}
+ * @returns {Number|number}  scroll position
  */
 export function getScrollTop() {
   return window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;

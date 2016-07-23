@@ -29,7 +29,10 @@ export default {
 
   renderSkillCircle(xPos, yPos, radius, percent, text) {
     const {percentStroke, fillerStroke} = SVGAttributesCalculator.getDashStrokeArray(radius, percent);
-    return h('g', {}, [
+    const id = `skill-${text}-title`;
+    return h('g', {attrs: { "aria-labelledby": id}}, [
+      h('title', {attrs: {id: id}}, `${text} - ${percent}%`),
+      h('description', {}, `Circle display skill with ${text}`),
       this.renderSingleCircle(xPos, yPos, radius, percentStroke, 'skill-circle--percent'),
       this.renderSingleCircle(xPos, yPos, radius, fillerStroke, 'skill-circle--filler'),
       this.renderText(xPos, yPos, radius, text)

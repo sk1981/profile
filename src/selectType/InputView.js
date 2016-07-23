@@ -9,9 +9,9 @@
 import h from 'snabbdom/h';
 import debounce from 'lodash/debounce'
 const actions = {
-  TEXT_CHANGE: "Text_Change",
-  ACTIVE_CHANGE: "Active_Change",
-  FOCUS_CHANGE: "Focus_Change"
+  TEXT_CHANGE: 'Text_Change',
+  ACTIVE_CHANGE: 'Active_Change',
+  FOCUS_CHANGE: 'Focus_Change'
 };
 
 function valueChange(inputEvent, model, handler) {
@@ -43,10 +43,16 @@ const valueChangeDebounced = debounce(valueChange, 200);
 function view(model, handler) {
   return h('div.input.select-type__wrapper', {}, [
     h('input.select-type__input', {
+      attrs: {
+        role: 'combobox', // https://www.w3.org/TR/wai-aria/roles#combobox
+        'aria-multiselectable': false,
+        'aria-autocomplete': 'both',
+        'aria-owns': 'select-filter-dropdown',
+        'aria-expanded': model.active,
+        'aria-haspopup': model.active // while for menus, still makes sense here
+      },
       props: {
         value: model.text,
-        autocomplete: false,
-        "aria-autocomplete": "list",
         placeholder: 'Please select a technology to filter...'
       },
       on: {

@@ -14,7 +14,14 @@ function getListIndexView(options = [], text = '', focusedOptionIndex, handler) 
 
 function view(data, handler) {
   return h(`div.select-type__dropdown`, {}, [
-    h('ul.select-type__list', {}, getListIndexView(data.options, data.text, data.focusedOptionIndex, handler))
+    h('ul.select-type__list', {
+      attrs:{
+        role: 'listbox',
+        id: 'select-filter-dropdown',
+        'aria-hidden': !data.active
+      }
+    },
+      getListIndexView(data.options, data.text, data.focusedOptionIndex, handler))
   ])
 }
 

@@ -39,7 +39,11 @@
 // For navigation links we want to inherit from base styles
 .main-nav__link {
   color: inherit;
+  text-decoration: none;
   &:hover, &:active, &:visited {
     color: inherit;
+  }
+  &:focus {
+    outline: 1px dotted $header-color;
   }
 }
