@@ -2,7 +2,7 @@ var h = require('snabbdom/h');
 
 import ProjectDataGenerator from './ProjectDataGenerator';
 import ProjectDataManager from './ProjectDataManager';
-import SelectTypeSetup from '../selectType/SelectTypeSetup'
+import SelectionType from '../selectionType/SelectionType'
 
 export default class ProjectCreator {
 
@@ -16,9 +16,10 @@ export default class ProjectCreator {
 
   setupSelector() {
     const tags = ProjectDataManager.getTagList(this.technologies);
-    SelectTypeSetup.loadSelectSetup(document.getElementsByClassName('filter-project_wrapper')[0], tags, {
+    const selectionType = new SelectionType(document.getElementsByClassName('filter-project_wrapper')[0], {
       onSelected: this.filterElements
     });
+    selectionType.loadSelectSetup(tags);
   }
 
   filterElements(filterValue) {
@@ -33,7 +34,7 @@ export default class ProjectCreator {
       h('h2.project-header.section--header', {},  'Projects'),
       h('label.filter-project', {}, [
         h('h3.filter-project__text', {}, 'Filter By Technology:'),
-        h('input.filter-project_wrapper', {hook: { insert: this.setupSelector}}, [])
+        h('div.filter-project_wrapper', {hook: { insert: this.setupSelector}})
       ]),
       ProjectDataGenerator.generateAllProjectData(ProjectDataManager.filterData(this.filterValue, this.projectData), this.technologies, this.filterValue)
     ]);

@@ -1,7 +1,9 @@
 import h from 'snabbdom/h';
 import DOMUtils from './DOMUtils';
 const actions = {
-  OPTION_SELECTED: 'option_selected'
+  OPTION_SELECTED: 'OPTION_SELECTED',
+  SELECTED_OPTION_INDEX: 'SELECTED_OPTION_INDEX'
+
 };
 
 function view(data, handler) {
@@ -12,6 +14,9 @@ function view(data, handler) {
     highlightedOption = data.option;
   }
   return h('li.select-type__index', {
+    hook: {
+      postpatch:  (oldVnode, vnode) => { vnode.elm.scrollIntoView(); },
+    },
     attrs: {
       role:"option"
     },

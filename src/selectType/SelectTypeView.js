@@ -1,10 +1,8 @@
-var snabbdom = require('snabbdom');
 var h = require('snabbdom/h');
-
 import InputView from './InputView';
 import SelectDropdownView from './SelectDropdownView';
+import ActionUtils from './action/ActionUtils';
 
-//TODO : Esnure keys work - enter selects first option, esc escapes , arrow navigates
 function view(data, handler) {
 
   return h('div.select-type', {
@@ -18,9 +16,13 @@ function view(data, handler) {
 }
 
 function update(model, action, listeners) {
-  //TODO : Simplify this
-  if (action.type === InputView.actions.ACTIVE_CHANGE || action.type === InputView.actions.TEXT_CHANGE || action.type === InputView.actions.FOCUS_CHANGE) {
+  console.log("update due to action ----" , action);
+  if (ActionUtils.isActionInGivenObject(InputView.actions, action.type)) {
     model = InputView.update(model, action, listeners);
+    // subsequent actions
+    // if(InputView.actions.OPTION_SELECTED === action.type) {
+    //   model = SelectDropdownView.update(model, {type: SelectDropdownView.actions.SELECTED_OPTION_INDEX});
+    // }
   } else {
     model = SelectDropdownView.update(model, action);
   }

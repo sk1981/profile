@@ -17,10 +17,9 @@ function main(initState, element, {view, update}, listeners) {
   patch(element, newVnode);
 }
 
-
 export default {
   loadSelectSetup(parent, options =[], listeners ={}) {
-    const initModel = {active: false, focusedOptionIndex: -1, options: options};
+    const initModel = {active: false, highlightedOptionIndex: -1, options: options};
     main(initModel, parent, SelectTypeView, listeners);
   }
 }
