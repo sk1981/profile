@@ -17,7 +17,6 @@ const SMALL_DISTANCE = 2500;
  */
 function getTotalTime(totalHeight) {
   const pixelsPerSeconds = ~~(totalHeight > SMALL_DISTANCE? PIXELS_PER_MSEC: PIXELS_PER_MSEC_SMALL);
-  console.log(pixelsPerSeconds);
   return totalHeight/pixelsPerSeconds;
 }
 

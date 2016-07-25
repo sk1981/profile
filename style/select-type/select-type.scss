@@ -15,6 +15,7 @@ $text-padding-hz: 8px;
   border-top-left-radius: 4px;
   box-shadow: none;
   border: 1px solid #9c9c9c;
+  height: 25px;
   &:hover, &:focus {
     outline: none;
     border-color: #58427C;
@@ -39,6 +40,7 @@ $text-padding-hz: 8px;
   display:none;
   cursor: pointer;
   cursor: hand;
+  font-size: 10px;
 }
 
 .select-type__cancel--selected {

@@ -1,5 +1,7 @@
 @import "header-nav";
 @import "animated-bg";
+
+$header-height: 350px;
 header {
   // To create a new context for margin collapse
   overflow: auto;
@@ -7,7 +9,8 @@ header {
   color: $header-color;
   display: flex;
   flex-direction: column;
-  height: 350px;
+  height: $header-height;
+  max-height:100%;
   justify-content: flex-end;
   align-items: center;
 }
@@ -15,7 +18,8 @@ header {
 .header-info {
   max-width: $main-content-width;
   width: 100%;
-  margin: auto;
+  margin: 0 auto 80px auto;
+  display: inline-block;
   position: relative;
 }
 

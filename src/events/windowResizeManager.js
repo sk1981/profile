@@ -17,7 +17,6 @@ const listenerList = [];
  */
 const resizeFunction = function (event) {
   const {height, width} = getSize();
-  console.log("resized", height, width);
   listenerList.forEach(function (listener) {
     listener.call(this, width, height);
   });
@@ -28,6 +27,8 @@ addEvent(window, 'resize', debouncedResizeFunction);
 
 /**
  * Adds listener
+ * 
+ * Clients can subscribe to this method to get callback whenever window is resized.
  * @param listener
  */
 export function addResizeListener(listener) {
@@ -48,6 +49,10 @@ export function removeResizeListener(listener) {
   }
 }
 
+/**
+ * function which returns the window size on demand
+ * @returns {{height: Number, width: Number}}
+ */
 export function getSize() {
   return {
     height: window.innerHeight,

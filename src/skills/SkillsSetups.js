@@ -12,8 +12,10 @@ var patch = snabbdom.init([
   require('snabbdom/modules/eventlisteners') 
 ]);
 
-const render = () => {
+/**
+ * Sets up and creates the skills related data
+ */
+export function renderSkills() {
   const skillsVNode = SkillsView.renderSkills(skillsData);
   patch(document.getElementsByClassName('skills-info')[0], skillsVNode);
-};
-render();
+}
