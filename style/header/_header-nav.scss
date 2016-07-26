@@ -36,6 +36,10 @@
       transform: scaleX(1);
     }
   }
+  // As it is an hover specific animation, disable border
+  .touch-device &:after {
+    border-bottom: none;
+  }
 }
 
 // For navigation links we want to inherit from base styles

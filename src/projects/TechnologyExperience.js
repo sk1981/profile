@@ -39,11 +39,6 @@ export default {
       "Familiar with the best practices while using jQuery."
     },
     {
-      name: "CSS",
-      description: "Have been using CSS for the past 8 years. Have in depth knowledge of different CSS Concepts, properties and best practices. " +
-      "Well versed in designing and managing CSS for large projects."
-    },
-    {
       name: "SQL",
       description: "Have used SQL Databases in many major projects. " +
       "Familiar with advance SQL concepts, writing SQL Queries and using SQL Plans figure out performance bottlenecks. " +

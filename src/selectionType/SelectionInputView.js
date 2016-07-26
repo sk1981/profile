@@ -11,7 +11,6 @@ export default {
 
   handleKeyMove(newHighlightedOptionIndex, filteredOptions, handler) {
     if(newHighlightedOptionIndex < filteredOptions.length && newHighlightedOptionIndex > -2) {
-      // handler({type: actions.HIGHLIGHTED_OPTION_CHANGE, highlightedOptionIndex: newHighlightedOptionIndex});
       handler.highlightOption(newHighlightedOptionIndex);
     }
   },
