@@ -7,21 +7,23 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="undefined/docs/favicon.ico">
+    <script src="app-test.js"></script>
     <title>Profile</title>
     <!--link(href="https://fonts.googleapis.com/css?family=Alegreya+Sans:300,400|Asap|Averia+Sans+Libre|Fira+Sans|Nunito|Racing+Sans+One|Sansita+One|Source+Sans+Pro" rel="stylesheet")-->
-    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:300,400|Nunito" rel="stylesheet">
-  <link href="app-styles.css" rel="stylesheet"></head>
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:400|Nunito" rel="stylesheet">
+  <link href="app-1246600c0cc3251f798f-styles.css" rel="stylesheet"></head>
   <body>
 <header>
   <canvas id="canvasBg">
-    <div class="canvas-fallback"></div>
+    <div aria-label="Simple animation using Canvas" class="canvas-fallback"></div>
   </canvas>
   <div class="header-info">
     <h1 class="header-main"><span class="header-main__name">Naval Singh</span></h1>
     <div class="header-main__title">FullStack Developer</div>
   </div>
   <nav class="main-nav">
-    <ul class="main-nav__list">
+    <!--some counter arguments against role  : https://adobe-accessibility.github.io/Accessible-Mega-Menu/-->
+    <ul role="navigation" aria-label="Main Menu" class="main-nav__list">
       <li class="main-nav__index"><a href="#about" data-target="about" class="main-nav__link">About</a></li>
       <li class="main-nav__index"><a href="#skills" data-target="skills" class="main-nav__link">Skills</a></li>
       <li class="main-nav__index"><a href="#experience" data-target="experience" class="main-nav__link">Experience</a></li>
@@ -39,7 +41,7 @@
       I have more than 8.5 years of experience in creating production facing web applications.
     </p>
     <p>I am proficient in Java, Javascript and CSS3 and in using tools and libraries like NodeJS, ReactJS, AngularJS, SpringBoot and so on.</p>
-    <p>I strive for the highest quality in my project and am a firm believer in best practices like Test Driven Development, responsive web design, graceful degradation and use of accessibility concepts.</p>
+    <p>I strive for the highest quality in my projects and am a firm believer in best practices like Test Driven Development, Responsive Web Design, Graceful Degradation and use of Accessibility concepts.</p>
   </div>
 </section>
             <section id="skills" class="site-section skills">
@@ -74,5 +76,5 @@
               </div>
             </section>
     </main>
-  <script type="text/javascript" src="app-bundle.js"></script></body>
+  <script type="text/javascript" src="app-1246600c0cc3251f798f-bundle.js"></script></body>
 </html>
