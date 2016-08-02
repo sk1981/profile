@@ -2,10 +2,10 @@
   {
     "title": "Marquee QuickPoll",
     "description": "Marquee Quickpoll is a Goldman Sachs Web Application which allows a salesperson to send out Surveys to clients based around key market events.",
-    "time": "February 2015 - April 2016",
+    "time": "January 2015 - April 2016",
     "responsibilities": [
-      "Built out the frontend and backend components of the App",
-      "Worked with the business sponsors to flesh out the app requirements",
+      "Built out the frontend and backend components of the App.",
+      "Worked with the business sponsors to flesh out the app requirements.",
       "Liaised with different departments like compliance, legal and helpdesk to ensure that all production rollout requirements were met."
     ],
     "technologies": [
@@ -35,9 +35,9 @@
   {
     "title": "Marquee API Site",
     "description": "Marquee API allows external clients use GS APIs as a part of their own applications by registering them using OAuth2 flow.",
-    "time": "January 2016 - April 2016",
+    "time": "December 2015 - April 2016",
     "responsibilities": [
-      "Built out the frontend and backend components of the App",
+      "Built out the frontend and backend components of the App.",
       "Worked with multiple teams to manage the development of the App."
     ],
     "technologies": [
@@ -62,7 +62,7 @@
   {
     "title": "JS Build",
     "description": "JSBuild, based on Gulp, was the internal GS JavaScript framework to build static assets.",
-    "time": "April 2014 - January 2015",
+    "time": "April 2014 - December 2015",
     "responsibilities": [
       "Enhanced the capabilities of the core framework",
       "Created custom Gulp plugins"
@@ -83,7 +83,7 @@
     "description": "UIToolkit is a library to standardize the styling across all GS application and provide reusable themes and components.",
     "time": "September 2013 - March 2014",
     "responsibilities": [
-      "Developed the first version of the toolkit'",
+      "Developed the first version of the toolkit.",
       "Provided guidance to teams using the library."
     ],
     "technologies": [
@@ -110,15 +110,15 @@
     "description": "GS CDN is an internal content delivery network designed to serve static content in an easy, efficient and reliable manner. GSCDN served more than 5 million requests daily.",
     "time": "June 2012 - August 2013",
     "responsibilities": [
-      "Designed, Developed and Managed the full framework which included apps to serve content, request content and manage it",
-      "Managed the set of libraries served by GSCDN",
-      "Provided guidance around use of different libraries"
+      "Designed, Developed and Managed the full framework which included apps to serve content, request content and manage it.",
+      "Managed the set of libraries served by GSCDN.",
+      "Provided guidance around use of different libraries."
     ],
     "technologies": [
       "Frontend Components - AngularJS, jQuery, VelocityJS and D3",
-      "Styling - Bootstrap, LESS, CSS3",
-      "Restservices - SpringBoot using Java 7",
-      "Build - Gradle, Gulp",
+      "Styling - CSS3, Bootstrap, LESS",
+      "Restservices - Spring using Java 7",
+      "Build - Gulp",
       "Testing - Protractor, JUnit and Angular Mock",
       "Database - SQL (PostgreSQL)",
       "Webserver - Apache, replaced by NGINX",
@@ -139,11 +139,11 @@
   {
     "title": "Condor",
     "time" : "July 2010 - September 2012",
-    "description": "Condor is a SOA based matching and alerting framework used for sending our GS specific research to clients based on their interest",
+    "description": "Condor is a SOA based matching and alerting framework used for sending out GS specific research to clients based on their interest",
     "responsibilities": [
-      "Owned the product",
-      "Enhanced the platform by implementing different features",
-      "Created APIs to provide the platform as a service"
+      "Owned the product.",
+      "Enhanced the platform by implementing different features.",
+      "Created APIs to provide the platform as a service."
     ],
     "technologies": [
       "Backend Services - Internal Framework based on Java",
@@ -164,12 +164,12 @@
       "Enhanced the styling of different parts of site using just CSS.",
       "Worked on the Core Internal JS library.",
       "Created a new Emerging Markets page.",
-      "Created a configurable panel to view GS Research as per your interest."
+      "Created a configurable panel to view GS Research as per interest."
     ],
     "technologies": [
       "Frontend Components - JSP, Internal Javascript Framework, ExtJS",
       "Styling - CSS",
-      "Backend Services - Internal Framework based on Java",
+      "Backend - Internal Framework based on Java",
       "Testing - Junit",
       "Database - Sybase"
     ],

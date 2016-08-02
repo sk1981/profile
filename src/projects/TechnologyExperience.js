@@ -42,7 +42,7 @@ export default {
       name: "SQL",
       description: "Have used SQL Databases in many major projects. " +
       "Familiar with advance SQL concepts, writing SQL Queries and using SQL Plans figure out performance bottlenecks. " +
-      "Good understanding of how to database and schema design. "
+      "Good understanding of how to database and schema design. Have done a lot of work in optimizing and tuning queries based on SQL Plans and Stats."
     },
     {
       name: "Spring",
@@ -52,7 +52,7 @@ export default {
     {
       name: "JavaScript Libraries",
       description: "Have used lots of different JS libraries. " +
-      "Some of these include Highcharts and D3 JS (for managing visualizations), Velocity JS(for animations), ExtJS, Snabdom (Virtual DOM), RxJS (Managing reactive flows) and so on."
+      "Some of these include Highcharts and D3 JS (for managing visualizations), Velocity JS(for animations), ExtJS, Snabbdom (Virtual DOM), RxJS (Managing reactive flows) and so on."
     },
     {
       name: "SASS",

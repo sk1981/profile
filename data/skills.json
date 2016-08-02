@@ -23,11 +23,11 @@
   },
   {
     "name": "Javascript",
-    "level": "100",
+    "level": "90",
     "subSkills": [
       {
         "name": "ES6",
-        "level": "100"
+        "level": "90"
       },
       {
         "name": "DOM",
@@ -67,7 +67,7 @@
   },
   {
     "name": "Tools",
-    "level": "100",
+    "level": "75",
     "subSkills": [
       {
         "name": "Gulp",
