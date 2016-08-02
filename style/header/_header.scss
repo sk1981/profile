@@ -5,7 +5,7 @@ $header-height: 350px;
 header {
   // To create a new context for margin collapse
   overflow: auto;
-  background-color: transparent;
+  background-color: $header-bg-color-opaque;
   color: $header-color;
   display: flex;
   flex-direction: column;

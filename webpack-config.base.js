@@ -11,7 +11,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'build'),
     libraryTarget: 'umd',
-    filename: '[name]-[chunkhash]-bundle.js'
+    filename: '[name]-[hash]-bundle.js'
   },
   module: {
     loaders: [
@@ -46,10 +46,9 @@ module.exports = {
     autoprefixer({browsers: ['last 3 versions']})
   ],
   plugins: [
-    new ExtractTextPlugin("[name]-[chunkhash]-styles.css"),
+    new ExtractTextPlugin("[name]-[hash]-styles.css"),
     new HtmlWebpackPlugin({
       template: './index.jade',
-      minify: false,
       inject: 'body'
     })
   ]

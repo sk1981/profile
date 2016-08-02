@@ -1,5 +1,6 @@
 header
-  canvas#canvasBg
+  // Use very small width/height so that the canvas is not displayed till  it is resized via javascript
+  canvas#canvasBg(width=1, height=1)
     div.canvas-fallback(aria-label="Simple animation using Canvas")
   div.header-info
     h1.header-main
