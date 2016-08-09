@@ -5,6 +5,7 @@ $small-width: 768px;
 // Colour scales
 $primary-color:#F8F9F8;
 $secondary-color: #302a30;
+$grey-1: #656464;
 
 //Font scales
 $heading-font: 'Nunito', sans-serif;
@@ -27,3 +28,6 @@ $main-content-bg-color: #f8f9f8;
 
 //Z-indexes
 $dropdown-zindex: 1000;
+
+// Common
+$date-color: $grey-1;

@@ -35,7 +35,7 @@
   {
     "title": "Marquee API Site",
     "description": "Marquee API allows external clients use GS APIs as a part of their own applications by registering them using OAuth2 flow.",
-    "time": "December 2015 - April 2016",
+    "time": "October 2015 - April 2016",
     "responsibilities": [
       "Built out the frontend and backend components of the App.",
       "Worked with multiple teams to manage the development of the App."
@@ -60,19 +60,21 @@
     ]
   },
   {
-    "title": "JS Build",
-    "description": "JSBuild, based on Gulp, was the internal GS JavaScript framework to build static assets.",
+    "title": "DASH/JS Build",
+    "description": "Dash and JSBuild is a set of tools and frameworks which enabled developers to build their desktop and web applications in a fast and efficient manner.",
     "time": "April 2014 - December 2015",
     "responsibilities": [
       "Enhanced the capabilities of the core framework",
-      "Created custom Gulp plugins"
+      "Provided trainings to developers on the framework"
     ],
     "technologies": [
-      "Core - JavaScript, NodeJS & Gulp",
-      "Components - RequireJS, Custom Gulp Plugins",
-      "Testing - Jasmine"
+      "Core - Java, JavaScript, NodeJS & Gulp",
+      "Components - AngularJS, Bootstrap, RequireJS, Custom Gulp Plugins",
+      "Testing - Jasmine, Cucumber"
     ],
     "tags": [
+      {"name": ["AngularJS"]},
+      {"name": ["Java"]},
       {"name": ["Javascript"]},
       {"name": ["NodeJS"]},
       {"name": ["Gulp"]}
@@ -81,7 +83,7 @@
   {
     "title": "UIToolkit",
     "description": "UIToolkit is a library to standardize the styling across all GS application and provide reusable themes and components.",
-    "time": "September 2013 - March 2014",
+    "time": "July 2013 - March 2014",
     "responsibilities": [
       "Developed the first version of the toolkit.",
       "Provided guidance to teams using the library."
@@ -108,7 +110,7 @@
   {
     "title": "GS CDN",
     "description": "GS CDN is an internal content delivery network designed to serve static content in an easy, efficient and reliable manner. GSCDN served more than 5 million requests daily.",
-    "time": "June 2012 - August 2013",
+    "time": "October 2012 - June 2013",
     "responsibilities": [
       "Designed, Developed and Managed the full framework which included apps to serve content, request content and manage it.",
       "Managed the set of libraries served by GSCDN.",
