@@ -6,6 +6,7 @@
 @import "animated-bg";
 
 $header-height: 350px;
+$header-meta-shift: 25px;
 header {
   // To create a new context for margin collapse
   overflow: auto;
@@ -42,7 +43,7 @@ header {
   // Position properties to ensure that title aligns text border
   position: absolute;
   bottom: -15px;
-  left: 24px;
+  left: $header-meta-shift;
   background-color: $header-bg;
   font-family: $heading-font;
   font-size: 16px;
@@ -51,4 +52,21 @@ header {
 
 .section--header {
   font-size: 30px;
+}
+
+.header__social {
+  position: absolute;
+  left: $header-meta-shift;
+  bottom: -50px;
+}
+
+.header__social-icon {
+  width: 20px;
+  height: 20px;
+  fill: white;
+  margin-right: 20px;
+  transition: all 0.4s;
+  &:hover {
+    fill: #fe7525;
+  }
 }
