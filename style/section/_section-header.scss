@@ -1,0 +1,51 @@
+/**
+ * This part manages the styles for section header
+ * Section header just appears as a block on mobile mode
+ * On desktop mode it gets shifted to right and gets a pentagon like look
+ */
+
+// Height of each section header
+$section-header-height: 64px;
+// Set a common width so that all section boxes match
+$section-header-width: 64px;
+
+/**
+ * Create a section header, with fixed width and height
+ */
+.section--header {
+  display: inline-block;
+  font-size: 30px;
+  $section-header-width: 160px;
+  height: $section-header-height;
+  line-height: $section-header-height;
+  position: relative;
+  margin:0;
+  padding: 0 5px;
+  background-color:$header-bg;
+  color: $header-color;
+
+  @media screen and (max-width: $small-width) {
+    border-radius: 5px;
+    margin-left: 15px;
+    margin-bottom: 10px;
+  }
+}
+
+/**
+ * Create an arrow like shape using borders and after 'element'
+ */
+.section--header::after  {
+  content:'';
+  display:inline-block;
+  height:0;
+  position:absolute;
+  top:0;
+  left:100%;
+  // Should be same as main bg so that they are not visible
+  border: #{$section-header-height/2} solid $main-content-bg-color;
+  border-left-color:$header-bg;
+  border-right-width:0;
+  @media screen and (max-width: $small-width) {
+    display:none;
+  }
+}

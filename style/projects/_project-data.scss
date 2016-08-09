@@ -1,12 +1,21 @@
 @import "experience-filter";
-.project-data__title {
+.project-data__overview {
   position: absolute;
   max-width: $main-content-info-shift;
   left: 0;
-  padding-top: 0;
   @media screen and (max-width: $small-width) {
     position: relative;
   }
+}
+
+.project-data__title {
+  padding-top: 0;
+}
+
+.project-data__timeline {
+  color: $date-color;
+  font-weight: bold;
+  font-size: 18px;
 }
 
 .project-data {

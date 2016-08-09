@@ -12,19 +12,19 @@ body {
 .container {
   max-width: $main-content-width;
   box-shadow: 1px 20px 30px 0 #000;
-  background-color: rgba(#F8F9F8, 1);
+  background-color: $main-content-bg-color;
   margin: -20px auto auto;
   padding: 15px 25px;
   border-radius: 10px;
   position: relative;
   @media screen and (max-width: $small-width) {
     padding: 5px;
-    box-shadow:none;
-    margin: -20px 0 0;
+    box-shadow: none;
+    margin: -20px 0;
     // move this to 3d to improve performance (really worked for me in Android !!)
     transform: translate3d(0, 0, 0);
     backface-visibility: hidden;
-    perspective: 1000;
+    perspective: 1000px;
   }
 }
 

@@ -9,6 +9,7 @@ h1, h2, h3, h4, h5, h6 {
   // Bottom padding more as content below header should be closer to it compared to content above it
   padding: 0.5em 0 0.1em 0;
   font-family: $heading-font;
+  // This is more due to the font we are using
   font-weight: 200;
   // disable link under headings
   a {

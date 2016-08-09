@@ -1,0 +1,37 @@
+/**
+ * This page manages styles related to different section of the site,
+ * like header section, skills sections etc
+ */
+
+@import "section-header";
+
+.site-section {
+  position: relative;
+
+  &:before {
+    content:"";
+    display:inline-block;
+    height:0;
+    width:100%;
+    border-bottom: 1px solid #1A1B1A;
+    font-size: 10px;
+    position: absolute;
+    top: 31px;
+  }
+  @media screen and (max-width: $small-width) {
+    // Add some padding in small mode, we don't need that in large mode as the headers are shifted to left
+    padding-bottom: 20px;
+  }
+}
+
+.site-section__info, .filter-project, .technology {
+  margin-left: $main-content-info-shift;
+  padding-left: 20px;
+  @media screen and (max-width: $small-width) {
+    margin-left: 0;
+  }
+}
+
+.technology__name {
+  padding-top: 0;
+}

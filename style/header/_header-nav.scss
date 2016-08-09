@@ -1,3 +1,7 @@
+/**
+ * Styles for header based navigation
+ */
+// Main nav which should take same with as main content
 .main-nav {
   max-width: $main-content-width;
   display: inline-block;
@@ -23,6 +27,7 @@
   overflow: hidden;
   display:inline-block;
 
+  // Create an element which just has  border and it's size is set to 0 by default
   &:after {
     padding: 0 10px;
     content: "";
@@ -32,17 +37,19 @@
     transform: scaleX(0);
     transition: all 0.5s;
   }
+  // Style menu items on hover by inclreasing size form 0 to 100%
   &:hover {
     &:after {
       transform: scaleX(1);
     }
   }
-  // As it is an hover specific animation, disable border
+  // As it is an hover specific animation, disable it for touch devices
   .touch-device &:after {
     border-bottom: none;
   }
 }
 
+// Style anchor links inside thhe navigation
 // For navigation links we want to inherit from base styles
 .main-nav__link {
   color: inherit;
