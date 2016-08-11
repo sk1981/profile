@@ -37,7 +37,7 @@ export default {
     return h('div.project-data.site-section__info', {}, [
       h('div.project-data__overview', [
         h('h2.project-data__title', {}, projectData.title),
-        h('div.project-data__timeline', {}, projectData.time)
+        h('div.project-data__timeline.timeline-data', {}, projectData.time)
       ]),
       h('div.project-data__description', {}, projectData.description),
       h('div', {}, [
