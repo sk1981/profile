@@ -27,3 +27,7 @@ List of technologies/libraries used:-
 * SASS - for managing CSS.
 * Webpack - for managing builds.
 * Babel - for ES6.
+
+# Plan to Add
+* Web Bluetooth
+* Service worker for offline availablity
