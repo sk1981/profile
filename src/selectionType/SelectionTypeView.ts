@@ -7,24 +7,24 @@ import ModelManager from './ModelManager';
 
 export default {
 
-  handlerCreator(model, dispatcher, listeners) {
+  handlerCreator(model: any, dispatcher: any, listeners: any) {
     return {
-      highlightOption: function(newHighlightedOptionIndex) {
+      highlightOption: function(newHighlightedOptionIndex: any) {
         model.highlightedOptionIndex = newHighlightedOptionIndex;
         dispatcher(model);
       },
-      optionIndexSelected: function(selectedHighlightOption) {
+      optionIndexSelected: function(selectedHighlightOption: any) {
         model.selectedText = model.filteredOptions[selectedHighlightOption];
         model = ModelManager.reset(model);
         model.text = model.selectedText;
         listeners.onSelected(model.selectedText);
         dispatcher(model);
       },
-      textChange: function(newText) {
+      textChange: function(newText: string) {
         model = ModelManager.filterOptions(model, newText);
         dispatcher(model);
       },
-      textSelected: function(text) {
+      textSelected: function(text: string) {
         const filteredOptions = model.filteredOptions;
         model.selectedText = filteredOptions.indexOf(text) > -1 ? text: filteredOptions[0];
         model = ModelManager.reset(model);
@@ -36,7 +36,7 @@ export default {
         model = ModelManager.reset(model);
         dispatcher(model);
       },
-      isActive: function(isActive) {
+      isActive: function(isActive: boolean) {
         if(!isActive) {
           model = ModelManager.reset(model);
         } else {
@@ -53,7 +53,7 @@ export default {
     }
   },
 
-  render(model, dispatcher, listeners) {
+  render(model: any, dispatcher: any, listeners: any) {
 
     const handler = this.handlerCreator(model, dispatcher, listeners);
 

@@ -9,13 +9,13 @@ const SPECIAL_KEYS = [KeyUtils.keys.DOWN_ARROW_KEY,
 
 export default {
 
-  handleKeyMove(newHighlightedOptionIndex, filteredOptions, handler) {
+  handleKeyMove(newHighlightedOptionIndex: number, filteredOptions: any, handler: any) {
     if(newHighlightedOptionIndex < filteredOptions.length && newHighlightedOptionIndex > -2) {
       handler.highlightOption(newHighlightedOptionIndex);
     }
   },
 
-  specialKeysChange(inputEvent, model, handler) {
+  specialKeysChange(inputEvent: KeyboardEvent, model: any, handler: any) {
     const keyCode = +inputEvent.keyCode;
     switch(keyCode) {
       case KeyUtils.keys.DOWN_ARROW_KEY: // move to next option as highlight
@@ -34,30 +34,33 @@ export default {
             handler.textSelected(model.text);
           }
           // As postupdate does not seems to work, manually blur
-          inputEvent.target.blur();
+          // @ts-ignore
+          inputEvent.target?.blur();
         }
         break;
       case KeyUtils.keys.ESCAPE_KEY: //close the option
         handler.cancelled();
         // As postupdate does not seems to work, manually blur
-        inputEvent.target.blur();
+        // @ts-ignore
+        inputEvent.target?.blur();
         break;
       default:
       //empty
     }
   },
 
-  valueChange(inputEvent, handler) {
+  valueChange(inputEvent: KeyboardEvent, handler: any) {
     const keyCode = +inputEvent.keyCode;
     // Ignore the special keys
-    if(!SPECIAL_KEYS.indexOf(keyCode) > -1) {
+    if(!(SPECIAL_KEYS.indexOf(keyCode) > -1)) {
+      // @ts-ignore
       const textValue = inputEvent.target.value;
       handler.textChange(textValue);
       // handler({type: actions.TEXT_CHANGE, text: textValue});
     }
   },
   
-  render(model, handler) {
+  render(model: any, handler: any) {
     return h('div.input.select-type__wrapper', {}, [
       h('input.select-type__input', {
         class: {
@@ -75,6 +78,7 @@ export default {
           value: model.active ? model.text : model.selectedText,
           placeholder: 'Please select a technology to filter...'
         },
+        // @ts-ignore
         on: {
           keydown: event => {
             this.specialKeysChange(event, model, handler);

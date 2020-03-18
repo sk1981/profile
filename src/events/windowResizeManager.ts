@@ -3,21 +3,23 @@
  * and notify and objects interested in window size
  */
 import addEvent from './addEvent';
+// @ts-ignore
 import debounce from 'lodash/debounce';
 
 /**
  * Stores list of all the listeners
  * @type {Array}
  */
-const listenerList = [];
+const listenerList: any[] = [];
 
 /**
  * Main function which fires resize events
  * @param event
  */
-const resizeFunction = function (event) {
+const resizeFunction = function () {
   const {height, width} = getSize();
   listenerList.forEach(function (listener) {
+    // @ts-ignore
     listener.call(this, width, height);
   });
 };
@@ -31,7 +33,7 @@ addEvent(window, 'resize', debouncedResizeFunction);
  * Clients can subscribe to this method to get callback whenever window is resized.
  * @param listener
  */
-export function addResizeListener(listener) {
+export function addResizeListener(listener: Function) {
   if (listener !== undefined && typeof listener === "function") {
     listenerList.push(listener);
   }
@@ -41,11 +43,11 @@ export function addResizeListener(listener) {
  *
  * @param listener
  */
-export function removeResizeListener(listener) {
+export function removeResizeListener(listener: Function) {
   var listenerIndex = listenerList.indexOf(listener);
   //TODO : Older IE ?  Does not matter much as for our simple app not many listeners
-  if (index > -1) {
-    listenerIndex.splice(index, 1);
+  if (listenerIndex > -1) {
+    listenerList.splice(listenerIndex, 1);
   }
 }
 

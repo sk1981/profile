@@ -15,7 +15,7 @@ const SMALL_DISTANCE = 2500;
  *
  * @type {number}
  */
-function getTotalTime(totalHeight) {
+function getTotalTime(totalHeight: number) {
   const pixelsPerSeconds = ~~(totalHeight > SMALL_DISTANCE? PIXELS_PER_MSEC: PIXELS_PER_MSEC_SMALL);
   return totalHeight/pixelsPerSeconds;
 }
@@ -39,7 +39,7 @@ export function getScrollTop() {
  * @param elementInstance element for which top needs to be found
  * @returns {Number} total scroll position
  */
-export function getElementTop(elementInstance) {
+export function getElementTop(elementInstance: HTMLElement) {
   const elementRect = elementInstance.getBoundingClientRect();
   return elementRect.top;
 }
@@ -50,7 +50,7 @@ export function getElementTop(elementInstance) {
  *
  * @param elementInstance instance of the element to which to scroll to.
  */
-export function animate(elementInstance) {
+export function animate(elementInstance: HTMLElement) {
   const scrollTop = getScrollTop();
   const elementTop = getElementTop(elementInstance);
   const totalTime = getTotalTime(elementTop);

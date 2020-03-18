@@ -21,8 +21,9 @@ export default {
    *
    * @param functionToRun
    */
-  waitTillPolyFillsLoaded(functionToRun) {
+  waitTillPolyFillsLoaded(functionToRun: any) {
     if(needsAnimationFramePolyfill || needsClassListPolyfill) {
+      // @ts-ignore
       require.ensure(['classlist.js', 'raf'], () => {
         require('classlist.js');
         const raf = require('raf');

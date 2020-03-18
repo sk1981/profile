@@ -3,6 +3,9 @@
  * star's data
  */
 export default class StarDataCalculator {
+  private height: number;
+  private width: number;
+  public starArr: any[];
 
   /**
    * Static map of orignal start Data
@@ -18,13 +21,13 @@ export default class StarDataCalculator {
   /**
    * Constructor for creating instance
    */
-  constructor(width, height) {
+  constructor(width: number, height: number) {
     this.height = height;
     this.width = width;
     this.starArr = this.getStarDataArr(StarDataCalculator.GET_STAR_MAP());
   }
 
-  updateSize(width, height) {
+  updateSize(width: number, height: number) {
     this.height = height;
     this.width = width;
   }
@@ -35,8 +38,8 @@ export default class StarDataCalculator {
    * @param starMap
    * @returns {Array}
    */
-  getStarDataArr(starMap) {
-    var starArr = [];
+  getStarDataArr(starMap: any) {
+    const starArr = [];
     for (const starKey in starMap) {
       const stars = starMap[starKey];
       for (let i = 0; i < stars.count; i++) {

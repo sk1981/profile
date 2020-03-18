@@ -1,6 +1,5 @@
-var snabbdom = require('snabbdom');
-var h = require('snabbdom/h');
-var patch = snabbdom.init([
+import {h, init} from 'snabbdom';
+var patch = init([
   require('snabbdom/modules/class'),
   require('snabbdom/modules/props'),
   require('snabbdom/modules/style'),
@@ -12,8 +11,8 @@ var patch = snabbdom.init([
  */
 export default {
 
-  renderTechnologyInfo(technologies, filterValue) {
-    const technology = technologies.filter(technology => technology.name === filterValue);
+  renderTechnologyInfo(technologies: any, filterValue: string) {
+    const technology = technologies.filter((technology: any) => technology.name === filterValue);
     if (technology.length === 0) {
       return h('div', {}, '');
     } else {
@@ -26,14 +25,14 @@ export default {
     }
   },
 
-  generateAllProjectData(allProjectData, technologies, filteredValue) {
+  generateAllProjectData(allProjectData: any, technologies: any, filteredValue: any) {
     return h('div.project-list', {}, [
       this.renderTechnologyInfo(technologies, filteredValue),
-      ...allProjectData.map(projectData => this.generateProjectData(projectData))
+      ...allProjectData.map((projectData: any) => this.generateProjectData(projectData))
     ]);
   },
 
-  generateProjectData(projectData) {
+  generateProjectData(projectData: any) {
     return h('div.project-data.site-section__info', {}, [
       h('div.project-data__overview', [
         h('h2.project-data__title', {}, projectData.title),
@@ -51,15 +50,15 @@ export default {
     ]);
   },
 
-  getResponsibilityList(responsibilities) {
-    return h('ul', {}, responsibilities.map(responsibility => h('li', {}, responsibility)))
+  getResponsibilityList(responsibilities: any) {
+    return h('ul', {}, responsibilities.map((responsibility: any) => h('li', {}, responsibility)))
   },
 
-  getTechnologyList(technologies) {
-    return h('ul', {}, technologies.map(technology => h('li', {}, technology)))
+  getTechnologyList(technologies: any) {
+    return h('ul', {}, technologies.map((technology: any) => h('li', {}, technology)))
   },
 
-  render(projectData, technologies, filter) {
+  render(projectData: any, technologies: any, filter: any) {
     const vNode = this.generateAllProjectData(projectData, technologies, filter);
     patch(document.getElementsByClassName('project-list')[0], vNode);
   }

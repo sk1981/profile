@@ -8,6 +8,12 @@ const fullCircle = Math.ceil(2 * Math.PI);
  *
  */
 export default class StarFallAnimator {
+  private canvasContext: CanvasRenderingContext2D;
+  height: number;
+  width: number;
+  rafId: any;
+  starDataCalculator: StarDataCalculator;
+  _updatePos: () => void;
 
   /**
    * Create instance of star fall animator
@@ -16,7 +22,7 @@ export default class StarFallAnimator {
    * @param height height of context
    * @param width width of context
    */
-  constructor(canvasContext, height, width) {
+  constructor(canvasContext: CanvasRenderingContext2D, height: number, width: number) {
     this.canvasContext = canvasContext;
     this.height = height;
     this.width = width;
@@ -31,7 +37,7 @@ export default class StarFallAnimator {
    * @param width new width
    * @param height new height
    */
-  reSize(width, height) {
+  reSize(width: number, height: number) {
     this.height = height;
     this.width = width;
     this.starDataCalculator.updateSize(width, height);
@@ -47,7 +53,7 @@ export default class StarFallAnimator {
     //Clear existing
     this.canvasContext.clearRect(0, 0, this.width, this.height);
     this.starDataCalculator.moveStarDataArrDown();
-    this.draw(this.starDataCalculator.starArr);
+    this.draw();
     this.rafId = window.requestAnimationFrame(this._updatePos);
   }
 

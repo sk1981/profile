@@ -1,6 +1,6 @@
 export default {
 
-  getDashStrokeArray: function(radius, percent) {
+  getDashStrokeArray: function(radius: number, percent: number) {
     const circumference = radius * Math.PI * 2;
     const fillArcLength = percent / 100 * circumference; // Should be filled based on percent;
     const emptyArcLength = circumference - fillArcLength;

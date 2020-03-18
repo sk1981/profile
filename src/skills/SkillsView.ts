@@ -1,4 +1,4 @@
-import h from 'snabbdom/h';
+import {h} from 'snabbdom';
 import SkillCircle from './SkillCircle';
 
 /**
@@ -13,8 +13,8 @@ export default {
    * @param radius, radius of circle
    * @returns {*} svg vdom of skill circel
    */
-  renderSkillCirclesArray(skillsData, radius) {
-    return skillsData.map((skillData) => {
+  renderSkillCirclesArray(skillsData: any, radius: number) {
+    return skillsData.map((skillData: any) => {
       return h('svg', {
         attrs: {
           height: "100",
@@ -31,7 +31,7 @@ export default {
    * Renders all the skill related views
    * @param skillsData data related to all skills
    */
-  renderSkills: function (skillsData) {
+  renderSkills: function (skillsData: any) {
     const radius = 40;
     return h('div', [
       h('div', {class: {'skills-wrapper': true}},

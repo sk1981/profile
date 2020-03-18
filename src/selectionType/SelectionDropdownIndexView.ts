@@ -1,8 +1,8 @@
-var h = require('snabbdom/h');
+import {h} from 'snabbdom';
 import DOMUtils from './DOMUtils';
 
 export default {
-  render(model, handler) {
+  render(model: any, handler: any) {
     let highlightedOption;
     if(model.highlight) {
       highlightedOption = DOMUtils.highlightCharacters(model.option, model.highlight)
@@ -26,7 +26,7 @@ export default {
         "select-type__index--focused": model.isFocused
       },
       on: {
-        mousedown: event => {
+        mousedown: () => {
           handler.textSelected(model.option);
         }
       }

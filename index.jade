@@ -7,13 +7,15 @@ html(lang='en')
     meta(name='description', content='Online interactive resume for Naval Singh')
     meta(name='author', content='')
     link(rel='icon', href='favicon.ico')
-    script(src="app-test.js")
+    script(src="app-test.ts")
+    script(src="src/index.ts", defer)
+    link(rel='stylesheet', href='./style/main.scss')
     title Naval Singh Resume
     //link(href="https://fonts.googleapis.com/css?family=Alegreya+Sans:300,400|Asap|Averia+Sans+Libre|Fira+Sans|Nunito|Racing+Sans+One|Sansita+One|Source+Sans+Pro" rel="stylesheet")
     link(href="https://fonts.googleapis.com/css?family=Alegreya+Sans:400|Nunito" rel="stylesheet")
   body
     -
-    include ./templates/header.jade
+    include ./templates/header
     main.container
       include ./templates/about
       include ./templates/skills

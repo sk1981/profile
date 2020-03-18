@@ -6,20 +6,19 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sk1981/profile.git"
-  },
+  "repository": "git+https://github.com/sk1981/profile.git",
   "keywords": [
     "profile"
   ],
-  "author": "",
+  "author": "naval.singh@zalando.de <naval.singh@zalando.de>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/sk1981/profile/issues"
   },
   "homepage": "https://github.com/sk1981/profile#readme",
   "devDependencies": {
+    "@types/lodash": "^4.14.149",
+    "@types/node": "^13.9.1",
     "autoprefixer": "^6.3.7",
     "babel-core": "^6.10.4",
     "babel-loader": "^6.2.4",
@@ -32,10 +31,12 @@
     "jade": "^1.11.0",
     "jade-loader": "^0.8.0",
     "json-loader": "^0.5.4",
-    "sass-loader": "^4.0.0",
     "node-sass": "^3.8.0",
     "postcss-loader": "^0.9.1",
+    "pug": "^2.0.4",
+    "sass-loader": "^4.0.0",
     "style-loader": "^0.13.1",
+    "typescript": "^3.8.3",
     "webpack": "^1.13.1",
     "webpack-merge": "^0.14.0"
   },
@@ -44,6 +45,6 @@
     "lodash": "^4.13.1",
     "normalize.css": "^4.2.0",
     "raf": "^3.2.0",
-    "snabbdom": "^0.5.0"
+    "snabbdom": "^0.7.4"
   }
 }

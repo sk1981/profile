@@ -16,7 +16,7 @@ export default {
    * @param dashArray dash array of circle
    * @param className class to be attached
    */
-  renderSingleCircle(xPos, yPos, radius, dashArray, className) {
+  renderSingleCircle(xPos: number, yPos: number, radius: number, dashArray: any, className: string) {
     return h('circle', {
       attrs: {
         cx: xPos, cy: yPos, r: radius,
@@ -34,7 +34,7 @@ export default {
    * @param yPos y position of circle center
    * @param text text value
    */
-  renderText(xPos, yPos, text) {
+  renderText(xPos: number, yPos: number, text: string) {
     return h('text', {
       attrs: {
         x: xPos,
@@ -53,7 +53,7 @@ export default {
    * @param percent skill level as perecent
    * @param text skill name
    */
-  renderSkillCircle(xPos, yPos, radius, percent, text) {
+  renderSkillCircle(xPos: number, yPos: number, radius: number, percent: number, text: string) {
     const {percentStroke, fillerStroke} = SVGAttributesCalculator.getDashStrokeArray(radius, percent);
     const id = `skill-${text}-title`;
     return h('g', {attrs: { "aria-labelledby": id}}, [

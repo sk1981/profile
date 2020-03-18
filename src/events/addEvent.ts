@@ -9,7 +9,7 @@
  * @param type
  * @param callback
  */
-const addEvent = function(object, type, callback) {
+const addEvent = function(object: any, type: string, callback: Function) {
   if (object.addEventListener) {
     object.addEventListener(type, callback, false);
   } else if (object.attachEvent) {

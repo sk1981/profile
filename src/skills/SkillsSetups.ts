@@ -1,10 +1,10 @@
-import snabbdom from 'snabbdom';
+import {init} from 'snabbdom';
 import SkillsView from './SkillsView';
+// @ts-ignore
+import * as skillsData from '../../data/skills.json';
 
-const skillsData = require('../../data/skills.json');
 
-
-var patch = snabbdom.init([
+var patch = init([
   require('snabbdom/modules/class'),
   require('snabbdom/modules/props'),
   require('snabbdom/modules/style'),

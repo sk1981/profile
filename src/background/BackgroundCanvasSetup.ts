@@ -3,8 +3,8 @@ import StarFallAnimator from './StarFallAnimator';
 
 // Store it to avoid re-querying it evenu time
 const headerElement = document.getElementsByTagName('header')[0];
-const canvas = document.getElementById('canvasBg');
-const canvasFallBack = document.getElementsByClassName('canvas-fallback')[0];
+const canvas = document.getElementById('canvasBg') as HTMLCanvasElement;
+const canvasFallBack = document.getElementsByClassName('canvas-fallback')[0] as HTMLDivElement;
 
 function getHeaderSize() {
   const boundingBox = headerElement.getBoundingClientRect();
@@ -17,7 +17,7 @@ function getHeaderSize() {
 function setupBackground() {
   const size = getHeaderSize();
   if(canvas.getContext) {
-    const canvasContext = canvas.getContext('2d');
+    const canvasContext = canvas.getContext('2d')!;
     canvas.height = size.height;
     canvas.width = size.width;
     canvasContext.fillStyle = 'white';

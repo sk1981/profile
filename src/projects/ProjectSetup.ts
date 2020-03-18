@@ -2,13 +2,13 @@
  * Sets ups the whole project related details
  */
 
-import snabbdom from 'snabbdom';
+import {init} from 'snabbdom';
 import ProjectCreator from './ProjectCreator';
 import TechnologyExperience  from './TechnologyExperience';
 const projectData  = require( '../../data/projects.json');
 
 
-var patch = snabbdom.init([
+var patch = init([
   require('snabbdom/modules/class'),
   require('snabbdom/modules/props'),
   require('snabbdom/modules/style'),
@@ -19,7 +19,7 @@ var patch = snabbdom.init([
  * Renders the project data
  * @param projectCreator
  */
-const render = (projectCreator) => {
+const render = (projectCreator: any) => {
   const projectDataVNode = projectCreator.createProject(projectData);
   patch(document.getElementsByClassName('projects-container')[0], projectDataVNode);
 };

@@ -1,6 +1,6 @@
 import SelectionTypeView from './SelectionTypeView';
-import snabbdom from 'snabbdom';
-const patch = snabbdom.init([
+import {init} from 'snabbdom';
+const patch = init([
   require('snabbdom/modules/class'),
   require('snabbdom/modules/props'),
   require('snabbdom/modules/attributes'),
@@ -10,18 +10,21 @@ const patch = snabbdom.init([
 
 export default class {
 
-  constructor(parent, listeners) {
+  oNode: any;
+  listeners: any;
+
+  constructor(parent: any, listeners: any) {
     this.oNode = parent;
     this.dispatcher = this.dispatcher.bind(this);
     this.listeners = listeners;
   }
 
-  dispatcher(model){
+  dispatcher(model: any){
     this.render(model);
     // completionCallback(model);
   }
 
-  render(model) {
+  render(model: any) {
     const vNode = SelectionTypeView.render(model, this.dispatcher, this.listeners );
     patch(this.oNode, vNode);
     this.oNode = vNode;

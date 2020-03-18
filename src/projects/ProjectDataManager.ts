@@ -8,9 +8,9 @@ export default {
    * @param filterData
    * @param projectData
    */
-  filterData(filterData = '', projectData) {
-    const filteredProjects = projectData.filter(p => {
-      return p.tags !== undefined && p.tags.some(t => t.name.indexOf(filterData) > -1)
+  filterData(filterData = '', projectData: any) {
+    const filteredProjects = projectData.filter((p: any) => {
+      return p.tags !== undefined && p.tags.some((t: any) => t.name.indexOf(filterData) > -1)
     });
     //TODO : Is lenght = 0 fine ? or should we 
     return filteredProjects.length === 0 ? projectData : filteredProjects;
@@ -23,7 +23,7 @@ export default {
    * @param technologies
    * @returns {Array}
    */
-  getTagList(technologies) {
+  getTagList(technologies: any[]) {
     return technologies.map(technology => technology.name)
   }
 }
