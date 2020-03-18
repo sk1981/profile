@@ -1,12 +1,11 @@
-import h from 'snabbdom/h';
-import SelectionInputView from './SelectionInputView';
-import SelectionDropdownView from './SelectionDropdownView';
-import CancelIconView from './CancelIconView';
+import h from "snabbdom/h";
+import SelectionInputView from "./SelectionInputView";
+import SelectionDropdownView from "./SelectionDropdownView";
+import CancelIconView from "./CancelIconView";
 
-import ModelManager from './ModelManager';
+import ModelManager from "./ModelManager";
 
 export default {
-
   handlerCreator(model: any, dispatcher: any, listeners: any) {
     return {
       highlightOption: function(newHighlightedOptionIndex: any) {
@@ -26,7 +25,8 @@ export default {
       },
       textSelected: function(text: string) {
         const filteredOptions = model.filteredOptions;
-        model.selectedText = filteredOptions.indexOf(text) > -1 ? text: filteredOptions[0];
+        model.selectedText =
+          filteredOptions.indexOf(text) > -1 ? text : filteredOptions[0];
         model = ModelManager.reset(model);
         model.text = model.selectedText;
         listeners.onSelected(model.selectedText);
@@ -37,7 +37,7 @@ export default {
         dispatcher(model);
       },
       isActive: function(isActive: boolean) {
-        if(!isActive) {
+        if (!isActive) {
           model = ModelManager.reset(model);
         } else {
           model.active = isActive;
@@ -46,18 +46,18 @@ export default {
       },
       fullReset: function() {
         model = ModelManager.reset(model);
-        model.selectedText = '';
+        model.selectedText = "";
         listeners.onSelected(model.selectedText);
         dispatcher(model);
       }
-    }
+    };
   },
 
   render(model: any, dispatcher: any, listeners: any) {
-
     const handler = this.handlerCreator(model, dispatcher, listeners);
 
-    return h('div.select-type',
+    return h(
+      "div.select-type",
       {
         class: {
           "select-type--active": model.active
@@ -70,4 +70,4 @@ export default {
       ]
     );
   }
-}
+};

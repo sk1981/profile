@@ -15,7 +15,7 @@ const addEvent = function(object: any, type: string, callback: Function) {
   } else if (object.attachEvent) {
     object.attachEvent("on" + type, callback);
   } else {
-    object["on"+type] = callback;
+    object["on" + type] = callback;
   }
 };
 

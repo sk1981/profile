@@ -1,5 +1,5 @@
 export default {
   getCurrentTime() {
-    return Date.now ? Date.now(): (new Date()).getTime();
+    return Date.now ? Date.now() : new Date().getTime();
   }
-}
+};

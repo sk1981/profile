@@ -4,9 +4,10 @@
  * Here we try to load the polyfills only if the features are not present.
  */
 
-
 const needsAnimationFramePolyfill = !window.requestAnimationFrame;
-const needsClassListPolyfill = !(document.documentElement && document.documentElement.classList) || !(document.body.classList);
+const needsClassListPolyfill =
+  !(document.documentElement && document.documentElement.classList) ||
+  !document.body.classList;
 
 export default {
   /**
@@ -22,11 +23,11 @@ export default {
    * @param functionToRun
    */
   waitTillPolyFillsLoaded(functionToRun: any) {
-    if(needsAnimationFramePolyfill || needsClassListPolyfill) {
+    if (needsAnimationFramePolyfill || needsClassListPolyfill) {
       // @ts-ignore
-      require.ensure(['classlist.js', 'raf'], () => {
-        require('classlist.js');
-        const raf = require('raf');
+      require.ensure(["classlist.js", "raf"], () => {
+        require("classlist.js");
+        const raf = require("raf");
         raf.polyfill();
         functionToRun();
       });
@@ -34,4 +35,4 @@ export default {
       functionToRun();
     }
   }
-}
+};

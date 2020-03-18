@@ -28,11 +28,14 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "gulp": "^3.9.1",
     "html-webpack-plugin": "^2.22.0",
+    "husky": "^4.2.3",
     "jade": "^1.11.0",
     "jade-loader": "^0.8.0",
     "json-loader": "^0.5.4",
     "node-sass": "^3.8.0",
     "postcss-loader": "^0.9.1",
+    "prettier": "^1.19.1",
+    "pretty-quick": "^2.0.1",
     "pug": "^2.0.4",
     "sass-loader": "^4.0.0",
     "style-loader": "^0.13.1",
@@ -46,5 +49,10 @@
     "normalize.css": "^4.2.0",
     "raf": "^3.2.0",
     "snabbdom": "^0.7.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
   }
 }

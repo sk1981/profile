@@ -13,8 +13,8 @@ export default class StarDataCalculator {
    */
   static GET_STAR_MAP() {
     return {
-      "MEDIUM": {count: 40, radius: 2},
-      "SMALL": {count: 80, radius: 1}
+      MEDIUM: { count: 40, radius: 2 },
+      SMALL: { count: 80, radius: 1 }
     };
   }
 
@@ -45,7 +45,7 @@ export default class StarDataCalculator {
       for (let i = 0; i < stars.count; i++) {
         const x = Math.floor(Math.random() * this.width);
         const y = Math.floor(Math.random() * this.height);
-        starArr.push({x, y, radius: stars.radius})
+        starArr.push({ x, y, radius: stars.radius });
       }
     }
     return starArr;
@@ -59,8 +59,7 @@ export default class StarDataCalculator {
     this.starArr.forEach(star => {
       let y = star.y + star.radius;
       y = y > this.height ? 0 : y;
-      star.y = ~~(y);
+      star.y = ~~y;
     });
   }
-
 }

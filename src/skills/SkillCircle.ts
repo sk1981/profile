@@ -1,5 +1,5 @@
-import h from 'snabbdom/h';
-import SVGAttributesCalculator from './SVGAttributesCalculator';
+import h from "snabbdom/h";
+import SVGAttributesCalculator from "./SVGAttributesCalculator";
 
 const STROKE_WIDTH = 10;
 
@@ -7,7 +7,6 @@ const STROKE_WIDTH = 10;
  * Creates a skill circle svg
  */
 export default {
-
   /**
    * Renders a single circle as per the provided data;
    * @param xPos x position of circle center
@@ -16,13 +15,21 @@ export default {
    * @param dashArray dash array of circle
    * @param className class to be attached
    */
-  renderSingleCircle(xPos: number, yPos: number, radius: number, dashArray: any, className: string) {
-    return h('circle', {
+  renderSingleCircle(
+    xPos: number,
+    yPos: number,
+    radius: number,
+    dashArray: any,
+    className: string
+  ) {
+    return h("circle", {
       attrs: {
-        cx: xPos, cy: yPos, r: radius,
-        'stroke-width': STROKE_WIDTH,
-        'stroke-dasharray': dashArray,
-        'stroke-dashoffset': 0,
+        cx: xPos,
+        cy: yPos,
+        r: radius,
+        "stroke-width": STROKE_WIDTH,
+        "stroke-dasharray": dashArray,
+        "stroke-dashoffset": 0,
         class: className
       }
     });
@@ -35,14 +42,18 @@ export default {
    * @param text text value
    */
   renderText(xPos: number, yPos: number, text: string) {
-    return h('text', {
-      attrs: {
-        x: xPos,
-        y: yPos,
-        dy: "5",
-        class: 'skill-circle__text'
-      }}
-      , text)
+    return h(
+      "text",
+      {
+        attrs: {
+          x: xPos,
+          y: yPos,
+          dy: "5",
+          class: "skill-circle__text"
+        }
+      },
+      text
+    );
   },
 
   /**
@@ -53,15 +64,36 @@ export default {
    * @param percent skill level as perecent
    * @param text skill name
    */
-  renderSkillCircle(xPos: number, yPos: number, radius: number, percent: number, text: string) {
-    const {percentStroke, fillerStroke} = SVGAttributesCalculator.getDashStrokeArray(radius, percent);
+  renderSkillCircle(
+    xPos: number,
+    yPos: number,
+    radius: number,
+    percent: number,
+    text: string
+  ) {
+    const {
+      percentStroke,
+      fillerStroke
+    } = SVGAttributesCalculator.getDashStrokeArray(radius, percent);
     const id = `skill-${text}-title`;
-    return h('g', {attrs: { "aria-labelledby": id}}, [
-      h('title', {attrs: {id: id}}, `${text} - ${percent}%`),
-      h('description', {}, `Circle display skill with ${text}`),
-      this.renderSingleCircle(xPos, yPos, radius, percentStroke, 'skill-circle--percent'),
-      this.renderSingleCircle(xPos, yPos, radius, fillerStroke, 'skill-circle--filler'),
+    return h("g", { attrs: { "aria-labelledby": id } }, [
+      h("title", { attrs: { id: id } }, `${text} - ${percent}%`),
+      h("description", {}, `Circle display skill with ${text}`),
+      this.renderSingleCircle(
+        xPos,
+        yPos,
+        radius,
+        percentStroke,
+        "skill-circle--percent"
+      ),
+      this.renderSingleCircle(
+        xPos,
+        yPos,
+        radius,
+        fillerStroke,
+        "skill-circle--filler"
+      ),
       this.renderText(xPos, yPos, text)
     ]);
   }
-}
+};

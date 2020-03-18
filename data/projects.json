@@ -19,17 +19,17 @@
       "Database - MongoDB"
     ],
     "tags": [
-      {"name": ["Javascript", "JavaScript Libraries"]},
-      {"name": ["CSS"]},
-      {"name": ["ReactJS", "Reflux", "ImmutableJS"]},
-      {"name": ["Highcharts"]},
-      {"name": ["Dropwizard", "Java"]},
-      {"name": ["CSS3", "Bootstrap", "SASS"]},
-      {"name": ["WebSockets"]},
-      {"name": ["MongoDB"]},
-      {"name": ["NGINX"]},
-      {"name": ["Browserify", "Gulp"]},
-      {"name": ["Protractor", "Karma", "Jasmine", "JUnit"]}
+      { "name": ["Javascript", "JavaScript Libraries"] },
+      { "name": ["CSS"] },
+      { "name": ["ReactJS", "Reflux", "ImmutableJS"] },
+      { "name": ["Highcharts"] },
+      { "name": ["Dropwizard", "Java"] },
+      { "name": ["CSS3", "Bootstrap", "SASS"] },
+      { "name": ["WebSockets"] },
+      { "name": ["MongoDB"] },
+      { "name": ["NGINX"] },
+      { "name": ["Browserify", "Gulp"] },
+      { "name": ["Protractor", "Karma", "Jasmine", "JUnit"] }
     ]
   },
   {
@@ -50,13 +50,13 @@
       "MongoDB"
     ],
     "tags": [
-      {"name": ["Javascript"]},
-      {"name": ["CSS"]},
-      {"name": ["ReactJS", "Redux"]},
-      {"name": ["CSS3", "Bootstrap", "SASS"]},
-      {"name": ["Dropwizard", "Java"]},
-      {"name": ["Browserify", "Gulp"]},
-      {"name": ["Protractor", "Karma", "Jasmine", "JUnit"]}
+      { "name": ["Javascript"] },
+      { "name": ["CSS"] },
+      { "name": ["ReactJS", "Redux"] },
+      { "name": ["CSS3", "Bootstrap", "SASS"] },
+      { "name": ["Dropwizard", "Java"] },
+      { "name": ["Browserify", "Gulp"] },
+      { "name": ["Protractor", "Karma", "Jasmine", "JUnit"] }
     ]
   },
   {
@@ -73,11 +73,11 @@
       "Testing - Jasmine, Cucumber"
     ],
     "tags": [
-      {"name": ["AngularJS"]},
-      {"name": ["Java"]},
-      {"name": ["Javascript"]},
-      {"name": ["NodeJS"]},
-      {"name": ["Gulp"]}
+      { "name": ["AngularJS"] },
+      { "name": ["Java"] },
+      { "name": ["Javascript"] },
+      { "name": ["NodeJS"] },
+      { "name": ["Gulp"] }
     ]
   },
   {
@@ -97,14 +97,14 @@
       "Database - MongoDB"
     ],
     "tags": [
-      {"name": ["Javascript", "JavaScript Libraries"]},
-      {"name": ["jQuery"]},
-      {"name": ["AngularJS"]},
-      {"name": ["CSS", "SASS"]},
-      {"name": ["ExpressJS"]},
-      {"name": ["NodeJS"]},
-      {"name": ["Gulp"]},
-      {"name": ["CSS3", "Bootstrap", "SASS"]}
+      { "name": ["Javascript", "JavaScript Libraries"] },
+      { "name": ["jQuery"] },
+      { "name": ["AngularJS"] },
+      { "name": ["CSS", "SASS"] },
+      { "name": ["ExpressJS"] },
+      { "name": ["NodeJS"] },
+      { "name": ["Gulp"] },
+      { "name": ["CSS3", "Bootstrap", "SASS"] }
     ]
   },
   {
@@ -127,20 +127,20 @@
       "NGINX Plugins - C (Authentication and Authorization plugins)"
     ],
     "tags": [
-      {"name": ["Javascript", "JavaScript Libraries"]},
-      {"name": ["jQuery"]},
-      {"name": ["CSS", "LESS"]},
-      {"name": ["AngularJS"]},
-      {"name": ["Spring"]},
-      {"name": ["SQL"]},
-      {"name": ["NGINX"]},
-      {"name": ["Gulp"]},
-      {"name": ["Jasmine", "JUnit"]}
+      { "name": ["Javascript", "JavaScript Libraries"] },
+      { "name": ["jQuery"] },
+      { "name": ["CSS", "LESS"] },
+      { "name": ["AngularJS"] },
+      { "name": ["Spring"] },
+      { "name": ["SQL"] },
+      { "name": ["NGINX"] },
+      { "name": ["Gulp"] },
+      { "name": ["Jasmine", "JUnit"] }
     ]
   },
   {
     "title": "Condor",
-    "time" : "July 2010 - September 2012",
+    "time": "July 2010 - September 2012",
     "description": "Condor is a SOA based matching and alerting framework used for sending out GS specific research to clients based on their interest",
     "responsibilities": [
       "Owned the product.",
@@ -153,14 +153,11 @@
       "Database - SQL (Sybase), Hibernate",
       "Webserver - Apache Tomcat"
     ],
-    "tags": [
-      {"name": ["Java", "Spring"]},
-      {"name": ["SQL"]}
-    ]
+    "tags": [{ "name": ["Java", "Spring"] }, { "name": ["SQL"] }]
   },
   {
     "title": "Goldman 360",
-    "time" : "September 2007 - June 2010",
+    "time": "September 2007 - June 2010",
     "description": "Redesigned and Developed parts of Goldman's client facing web portal - GS360",
     "responsibilities": [
       "Enhanced the styling of different parts of site using just CSS.",
@@ -176,11 +173,10 @@
       "Database - Sybase"
     ],
     "tags": [
-      {"name": ["Java"]},
-      {"name": ["SQL"]},
-      {"name": ["CSS"]},
-      {"name": ["Javascript"]}
+      { "name": ["Java"] },
+      { "name": ["SQL"] },
+      { "name": ["CSS"] },
+      { "name": ["Javascript"] }
     ]
   }
 ]
-

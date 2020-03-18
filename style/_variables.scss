@@ -3,13 +3,13 @@
 $small-width: 768px;
 
 // Colour scales
-$primary-color:#F8F9F8;
+$primary-color: #f8f9f8;
 $secondary-color: #302a30;
 $grey-1: #656464;
 
 //Font scales
-$heading-font: 'Nunito', sans-serif;
-$body-font:  'Alegreya Sans', sans-serif;
+$heading-font: "Nunito", sans-serif;
+$body-font: "Alegreya Sans", sans-serif;
 
 // Header properties
 $header-bg: $secondary-color;
@@ -19,7 +19,6 @@ $header-bg-color-opaque: rgba($header-bg, 0.9);
 // Body properties
 $body-bg: $primary-color;
 $body-color: $secondary-color;
-
 
 // Main content properties
 $main-content-width: 900px;

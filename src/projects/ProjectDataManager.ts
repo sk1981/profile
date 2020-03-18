@@ -8,11 +8,14 @@ export default {
    * @param filterData
    * @param projectData
    */
-  filterData(filterData = '', projectData: any) {
+  filterData(filterData = "", projectData: any) {
     const filteredProjects = projectData.filter((p: any) => {
-      return p.tags !== undefined && p.tags.some((t: any) => t.name.indexOf(filterData) > -1)
+      return (
+        p.tags !== undefined &&
+        p.tags.some((t: any) => t.name.indexOf(filterData) > -1)
+      );
     });
-    //TODO : Is lenght = 0 fine ? or should we 
+    //TODO : Is lenght = 0 fine ? or should we
     return filteredProjects.length === 0 ? projectData : filteredProjects;
   },
 
@@ -24,6 +27,6 @@ export default {
    * @returns {Array}
    */
   getTagList(technologies: any[]) {
-    return technologies.map(technology => technology.name)
+    return technologies.map(technology => technology.name);
   }
-}
+};

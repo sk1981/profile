@@ -1,5 +1,5 @@
-import EasingFunctions from '../animation/EasingFunctions'
-import DateUtils from '../uitls/DateUtils';
+import EasingFunctions from "../animation/EasingFunctions";
+import DateUtils from "../uitls/DateUtils";
 
 const PIXELS_PER_MSEC = 10; // We plan to move 10 pixels per milliseconds
 
@@ -16,8 +16,10 @@ const SMALL_DISTANCE = 2500;
  * @type {number}
  */
 function getTotalTime(totalHeight: number) {
-  const pixelsPerSeconds = ~~(totalHeight > SMALL_DISTANCE? PIXELS_PER_MSEC: PIXELS_PER_MSEC_SMALL);
-  return totalHeight/pixelsPerSeconds;
+  const pixelsPerSeconds = ~~(totalHeight > SMALL_DISTANCE
+    ? PIXELS_PER_MSEC
+    : PIXELS_PER_MSEC_SMALL);
+  return totalHeight / pixelsPerSeconds;
 }
 
 /**
@@ -26,7 +28,12 @@ function getTotalTime(totalHeight: number) {
  * @returns {Number|number}  scroll position
  */
 export function getScrollTop() {
-  return window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+  return (
+    window.pageYOffset ||
+    document.documentElement.scrollTop ||
+    document.body.scrollTop ||
+    0
+  );
 }
 
 /**
@@ -59,21 +66,26 @@ export function animate(elementInstance: HTMLElement) {
   function animateTween() {
     let timeDelta = Math.floor(DateUtils.getCurrentTime() - startTime);
     // if time-delta becomes greater than total time, make them equal.
-    if(timeDelta > totalTime) {
+    if (timeDelta > totalTime) {
       timeDelta = totalTime;
     }
     // elementTop ==> amount we need to move
-    let newScrollTop = EasingFunctions.easeOutQuad(timeDelta, scrollTop, elementTop, totalTime);
+    let newScrollTop = EasingFunctions.easeOutQuad(
+      timeDelta,
+      scrollTop,
+      elementTop,
+      totalTime
+    );
 
     if (timeDelta <= totalTime && !animationFinished) {
       // If both values are equal mark animation as finished
       // It can never be greater as we make them equal
-      if(timeDelta === totalTime) {
+      if (timeDelta === totalTime) {
         animationFinished = true;
       }
       document.documentElement.scrollTop = document.body.scrollTop = ~~newScrollTop;
       // window.setTimeout(animateTween, 17);
-      requestAnimationFrame(animateTween)
+      requestAnimationFrame(animateTween);
     }
   }
   animateTween();

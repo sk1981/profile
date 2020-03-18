@@ -1,8 +1,15 @@
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
 
   // em so that relative for header font size
@@ -27,8 +34,10 @@ ul {
 }
 
 a {
-  color: #055D89;
-  &:hover, &:active, &:visited {
-    color: #055D89;
+  color: #055d89;
+  &:hover,
+  &:active,
+  &:visited {
+    color: #055d89;
   }
 }

@@ -1,4 +1,4 @@
-import StarDataCalculator from './StarDataCalculator';
+import StarDataCalculator from "./StarDataCalculator";
 
 const fullCircle = Math.ceil(2 * Math.PI);
 
@@ -22,13 +22,17 @@ export default class StarFallAnimator {
    * @param height height of context
    * @param width width of context
    */
-  constructor(canvasContext: CanvasRenderingContext2D, height: number, width: number) {
+  constructor(
+    canvasContext: CanvasRenderingContext2D,
+    height: number,
+    width: number
+  ) {
     this.canvasContext = canvasContext;
     this.height = height;
     this.width = width;
     this.rafId = undefined;
     this.starDataCalculator = new StarDataCalculator(width, height);
-    this._updatePos = this.updatePos.bind(this)
+    this._updatePos = this.updatePos.bind(this);
   }
 
   /**
@@ -41,7 +45,7 @@ export default class StarFallAnimator {
     this.height = height;
     this.width = width;
     this.starDataCalculator.updateSize(width, height);
-    if(this.rafId !== undefined) {
+    if (this.rafId !== undefined) {
       window.cancelAnimationFrame(this.rafId);
     }
   }

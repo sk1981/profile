@@ -9,11 +9,11 @@
   position: relative;
 
   &:before {
-    content:"";
-    display:inline-block;
-    height:0;
-    width:100%;
-    border-bottom: 1px solid #1A1B1A;
+    content: "";
+    display: inline-block;
+    height: 0;
+    width: 100%;
+    border-bottom: 1px solid #1a1b1a;
     font-size: 10px;
     position: absolute;
     top: 31px;
@@ -24,7 +24,9 @@
   }
 }
 
-.site-section__info, .filter-project, .technology {
+.site-section__info,
+.filter-project,
+.technology {
   margin-left: $main-content-info-shift;
   padding-left: 20px;
   @media screen and (max-width: $small-width) {

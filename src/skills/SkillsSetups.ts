@@ -1,15 +1,14 @@
-import {init} from 'snabbdom';
-import SkillsView from './SkillsView';
+import { init } from "snabbdom";
+import SkillsView from "./SkillsView";
 // @ts-ignore
-import * as skillsData from '../../data/skills.json';
-
+import * as skillsData from "../../data/skills.json";
 
 var patch = init([
-  require('snabbdom/modules/class'),
-  require('snabbdom/modules/props'),
-  require('snabbdom/modules/style'),
-  require('snabbdom/modules/attributes'),
-  require('snabbdom/modules/eventlisteners') 
+  require("snabbdom/modules/class"),
+  require("snabbdom/modules/props"),
+  require("snabbdom/modules/style"),
+  require("snabbdom/modules/attributes"),
+  require("snabbdom/modules/eventlisteners")
 ]);
 
 /**
@@ -17,5 +16,5 @@ var patch = init([
  */
 export function renderSkills() {
   const skillsVNode = SkillsView.renderSkills(skillsData);
-  patch(document.getElementsByClassName('skills-info')[0], skillsVNode);
+  patch(document.getElementsByClassName("skills-info")[0], skillsVNode);
 }
