@@ -4,7 +4,7 @@
   "description": "Profile",
   "main": "app/main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "parcel index.jade"
   },
   "repository": "git+https://github.com/sk1981/profile.git",
   "keywords": [
@@ -20,14 +20,8 @@
     "@types/lodash": "^4.14.149",
     "@types/node": "^13.9.1",
     "autoprefixer": "^6.3.7",
-    "babel-core": "^6.10.4",
-    "babel-loader": "^6.2.4",
-    "babel-plugin-transform-es2015-function-name": "^6.9.0",
-    "babel-preset-es2015": "^6.9.0",
     "css-loader": "^0.23.1",
-    "extract-text-webpack-plugin": "^1.0.1",
     "gulp": "^3.9.1",
-    "html-webpack-plugin": "^2.22.0",
     "husky": "^4.2.3",
     "jade": "^1.11.0",
     "jade-loader": "^0.8.0",
@@ -39,9 +33,7 @@
     "pug": "^2.0.4",
     "sass-loader": "^4.0.0",
     "style-loader": "^0.13.1",
-    "typescript": "^3.8.3",
-    "webpack": "^1.13.1",
-    "webpack-merge": "^0.14.0"
+    "typescript": "^3.8.3"
   },
   "dependencies": {
     "classlist.js": "^1.1.20150312",
