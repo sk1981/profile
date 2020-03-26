@@ -17,8 +17,7 @@ export default {
     );
   },
 
-  // @ts-ignore
-  easeOutQuad: function(t, b, c, d) {
+  easeOutQuad: function(t: number, b: number, c: number, d: number) {
     return -c * (t /= d) * (t - 2) + b;
   }
 };

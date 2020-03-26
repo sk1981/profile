@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/sk1981/profile#readme",
   "devDependencies": {
-    "@types/lodash": "^4.14.149",
+    "@types/lodash.debounce": "^4.0.6",
     "@types/node": "^13.9.1",
     "autoprefixer": "^6.3.7",
     "css-loader": "^0.23.1",
@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "classlist.js": "^1.1.20150312",
-    "lodash": "^4.13.1",
+    "lodash.debounce": "^4.0.8",
     "normalize.css": "^4.2.0",
     "raf": "^3.2.0",
     "snabbdom": "^0.7.4"

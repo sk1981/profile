@@ -3,29 +3,28 @@
  * and notify and objects interested in window size
  */
 import addEvent from "./addEvent";
-// @ts-ignore
-import debounce from "lodash/debounce";
+import debounce from "lodash.debounce";
+
+type ListenerFunction = (windowWidth: number, windowHeight: number) => void;
 
 /**
  * Stores list of all the listeners
  * @type {Array}
  */
-const listenerList: any[] = [];
+const listenerList: ListenerFunction[] = [];
 
 /**
  * Main function which fires resize events
- * @param event
  */
-const resizeFunction = function() {
-  const { height, width } = getSize();
+const fireResizeListeners = function() {
+  const { windowHeight, windowWidth } = getWindowSize();
   listenerList.forEach(function(listener) {
-    // @ts-ignore
-    listener.call(this, width, height);
+    listener(windowWidth, windowHeight);
   });
 };
 
-const debouncedResizeFunction = debounce(resizeFunction, 250);
-addEvent(window, "resize", debouncedResizeFunction);
+const debouncedFireResizeListeners = debounce(fireResizeListeners, 250);
+addEvent(window, "resize", debouncedFireResizeListeners);
 
 /**
  * Adds listener
@@ -33,7 +32,7 @@ addEvent(window, "resize", debouncedResizeFunction);
  * Clients can subscribe to this method to get callback whenever window is resized.
  * @param listener
  */
-export function addResizeListener(listener: Function) {
+export function addResizeListener(listener: ListenerFunction) {
   if (listener !== undefined && typeof listener === "function") {
     listenerList.push(listener);
   }
@@ -43,7 +42,7 @@ export function addResizeListener(listener: Function) {
  *
  * @param listener
  */
-export function removeResizeListener(listener: Function) {
+export function removeResizeListener(listener: ListenerFunction) {
   var listenerIndex = listenerList.indexOf(listener);
   //TODO : Older IE ?  Does not matter much as for our simple app not many listeners
   if (listenerIndex > -1) {
@@ -55,9 +54,9 @@ export function removeResizeListener(listener: Function) {
  * function which returns the window size on demand
  * @returns {{height: Number, width: Number}}
  */
-export function getSize() {
+export function getWindowSize() {
   return {
-    height: window.innerHeight,
-    width: window.innerWidth
+    windowHeight: window.innerHeight,
+    windowWidth: window.innerWidth
   };
 }

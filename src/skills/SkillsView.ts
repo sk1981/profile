@@ -13,6 +13,7 @@ export default {
    * @returns {*} svg vdom of skill circel
    */
   renderSkillCirclesArray(skillsData: any, radius: number) {
+    console.log("=-------------", skillsData);
     return skillsData.map((skillData: any) => {
       return h(
         "svg",

@@ -1,65 +1,91 @@
+interface StarTypeData {
+  // number of stars of given type
+  count: number;
+  // Radius of these stars
+  radius: number;
+}
+
+interface StarInstance {
+  // x position of single star
+  x: number;
+  // y position of single star
+  y: number;
+  // size of star
+  radius: number;
+  xChange: number;
+}
+
 /**
  * Class for calculating various attributes related to
  * star's data
  */
 export default class StarDataCalculator {
-  private height: number;
-  private width: number;
-  public starArr: any[];
+  private containerHeight: number;
+  private containerWidth: number;
+  public starsArr: StarInstance[];
 
   /**
    * Static map of orignal start Data
    * @returns {Map}
    */
-  static GET_STAR_MAP() {
-    return {
-      MEDIUM: { count: 40, radius: 2 },
-      SMALL: { count: 80, radius: 1 }
-    };
+  static GET_STAR_TYPE_MAP(): StarTypeData[] {
+    return [
+      { count: 10, radius: 2.5 },
+      { count: 40, radius: 2 },
+      { count: 80, radius: 1 }
+    ];
   }
 
   /**
    * Constructor for creating instance
    */
-  constructor(width: number, height: number) {
-    this.height = height;
-    this.width = width;
-    this.starArr = this.getStarDataArr(StarDataCalculator.GET_STAR_MAP());
+  constructor(containerWidth: number, containerHeight: number) {
+    this.containerHeight = containerHeight;
+    this.containerWidth = containerWidth;
+    this.starsArr = this.getStarsArr(StarDataCalculator.GET_STAR_TYPE_MAP());
   }
 
-  updateSize(width: number, height: number) {
-    this.height = height;
-    this.width = width;
+  updateContainerSize(containerWidth: number, containerHeight: number) {
+    this.containerHeight = containerHeight;
+    this.containerWidth = containerWidth;
   }
 
   /**
-   * Gets data for all stars randomly generated
+   * Gets data for all the starts with randomly generated position
    *
-   * @param starMap
    * @returns {Array}
+   * @param starTypeMap
    */
-  getStarDataArr(starMap: any) {
-    const starArr = [];
-    for (const starKey in starMap) {
-      const stars = starMap[starKey];
-      for (let i = 0; i < stars.count; i++) {
-        const x = Math.floor(Math.random() * this.width);
-        const y = Math.floor(Math.random() * this.height);
-        starArr.push({ x, y, radius: stars.radius });
-      }
-    }
-    return starArr;
+  getStarsArr(starTypeMap: StarTypeData[]) {
+    return starTypeMap.reduce(
+      (starArr: StarInstance[], starType: StarTypeData) => {
+        for (let i = 0; i < starType.count; i++) {
+          // Position stars randomly
+          const x = Math.floor(Math.random() * this.containerWidth);
+          const y = Math.floor(Math.random() * this.containerHeight);
+          starArr.push({
+            x,
+            y,
+            radius: starType.radius,
+            xChange: Math.random() / 5 - 0.1
+          });
+        }
+        return starArr;
+      },
+      []
+    );
   }
 
   /**
    * Moves each star down by one unit
    *
    */
-  moveStarDataArrDown() {
-    this.starArr.forEach(star => {
-      let y = star.y + star.radius;
-      y = y > this.height ? 0 : y;
-      star.y = ~~y;
+  moveStars() {
+    this.starsArr.forEach(star => {
+      let y = ~~(star.y + star.radius);
+      star.y = y > this.containerHeight ? 0 : y;
+      /*let x = star.x + star.xChange;
+      star.x = x > this.containerWidth ? 0 : x; */
     });
   }
 }

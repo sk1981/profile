@@ -6,15 +6,11 @@
     "checkJs": false,
     "allowJs": true,
     "baseUrl": ".",
+    "esModuleInterop": true,
     "resolveJsonModule": true,
     "paths": {
-      "~*": [
-        "src/*"
-      ]
+      "~*": ["src/*"]
     },
-    "lib": [
-      "dom",
-      "es2015"
-    ]
+    "lib": ["dom", "es2019"]
   }
 }

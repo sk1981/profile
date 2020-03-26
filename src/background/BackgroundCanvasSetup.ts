@@ -1,42 +1,55 @@
-import { addResizeListener, getSize } from "../events/windowResizeManager";
+import { addResizeListener } from "../events/windowResizeManager";
 import StarFallAnimator from "./StarFallAnimator";
 
-// Store it to avoid re-querying it evenu time
+// Store it to avoid re-querying it every time
 const headerElement = document.getElementsByTagName("header")[0];
-const canvas = document.getElementById("canvasBg") as HTMLCanvasElement;
+const canvas = document.getElementById("canvasBg");
 const canvasFallBack = document.getElementsByClassName(
   "canvas-fallback"
 )[0] as HTMLDivElement;
 
-function getHeaderSize() {
+function getHeaderDimensions() {
   const boundingBox = headerElement.getBoundingClientRect();
   return {
-    height: boundingBox.height || boundingBox.bottom - boundingBox.top,
-    width: boundingBox.width || boundingBox.right - boundingBox.left
+    windowHeight: boundingBox.bottom - boundingBox.top,
+    windowWidth: boundingBox.right - boundingBox.left
   };
 }
 
+function isCanvas(canvas: HTMLElement): canvas is HTMLCanvasElement {
+  return "getContext" in canvas;
+}
+
 function setupBackground() {
-  const size = getHeaderSize();
-  if (canvas.getContext) {
+  const headerSize = getHeaderDimensions();
+  if (!canvas) {
+    throw new Error("Canvas element not found");
+  }
+
+  if (isCanvas(canvas)) {
     const canvasContext = canvas.getContext("2d")!;
-    canvas.height = size.height;
-    canvas.width = size.width;
+    canvas.height = headerSize.windowHeight;
+    canvas.width = headerSize.windowWidth;
     canvasContext.fillStyle = "white";
-    let animator = new StarFallAnimator(canvasContext, size.height, size.width);
-    animator.reSize(size.width, size.height);
+    const animator = new StarFallAnimator(
+      canvasContext,
+      headerSize.windowHeight,
+      headerSize.windowWidth
+    );
+    animator.reSize(headerSize.windowWidth, headerSize.windowHeight);
     animator.updatePos();
   } else {
-    canvas.style.height = `${size.height}px`;
-    canvas.style.width = `${size.width}px`;
+    // Setup background header with color
+    canvas.style.height = `${headerSize.windowHeight}px`;
+    canvas.style.width = `${headerSize.windowWidth}px`;
     canvas.style.display = "block";
-    canvasFallBack.style.height = `${size.height}px`;
-    canvasFallBack.style.width = `${size.width}px`;
+    canvasFallBack.style.height = `${headerSize.windowHeight}px`;
+    canvasFallBack.style.width = `${headerSize.windowWidth}px`;
   }
 }
 
 /**
- * Sets up Canavs to display BG image
+ * Sets up Canvas to display BG image
  */
 export function setUpBackground() {
   addResizeListener(() => {

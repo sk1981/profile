@@ -1,19 +1,19 @@
 import StarDataCalculator from "./StarDataCalculator";
 
-const fullCircle = Math.ceil(2 * Math.PI);
+const FULL_CIRCLE_IN_RADIANS = Math.ceil(2 * Math.PI);
 
 /**
  * Animates the star fall by using canvas to redraw randomly
  * multiple points and then animate it
- *
+ * It creates a parallax effect in 2d by creating stars of different
+ * size moving at different speed
  */
 export default class StarFallAnimator {
   private canvasContext: CanvasRenderingContext2D;
-  height: number;
-  width: number;
-  rafId: any;
+  windowHeight: number;
+  windowWidth: number;
+  rafId?: number;
   starDataCalculator: StarDataCalculator;
-  _updatePos: () => void;
 
   /**
    * Create instance of star fall animator
@@ -28,11 +28,10 @@ export default class StarFallAnimator {
     width: number
   ) {
     this.canvasContext = canvasContext;
-    this.height = height;
-    this.width = width;
+    this.windowHeight = height;
+    this.windowWidth = width;
     this.rafId = undefined;
     this.starDataCalculator = new StarDataCalculator(width, height);
-    this._updatePos = this.updatePos.bind(this);
   }
 
   /**
@@ -41,10 +40,10 @@ export default class StarFallAnimator {
    * @param width new width
    * @param height new height
    */
-  reSize(width: number, height: number) {
-    this.height = height;
-    this.width = width;
-    this.starDataCalculator.updateSize(width, height);
+  reSize(windowWidth: number, windowHeight: number) {
+    this.windowHeight = windowHeight;
+    this.windowWidth = windowWidth;
+    this.starDataCalculator.updateContainerSize(windowWidth, windowHeight);
     if (this.rafId !== undefined) {
       window.cancelAnimationFrame(this.rafId);
     }
@@ -53,13 +52,13 @@ export default class StarFallAnimator {
   /**
    * Updates animation by clearing the rect and and drawing the points
    */
-  updatePos() {
+  updatePos = () => {
     //Clear existing
-    this.canvasContext.clearRect(0, 0, this.width, this.height);
-    this.starDataCalculator.moveStarDataArrDown();
+    this.canvasContext.clearRect(0, 0, this.windowWidth, this.windowHeight);
+    this.starDataCalculator.moveStars();
     this.draw();
-    this.rafId = window.requestAnimationFrame(this._updatePos);
-  }
+    this.rafId = window.requestAnimationFrame(this.updatePos);
+  };
 
   /**
    * Draws each points and moves them to new position by by adding a
@@ -67,9 +66,16 @@ export default class StarFallAnimator {
    */
   draw() {
     this.canvasContext.beginPath();
-    this.starDataCalculator.starArr.forEach(star => {
+    this.starDataCalculator.starsArr.forEach(star => {
       this.canvasContext.moveTo(star.x, star.y);
-      this.canvasContext.arc(star.x, star.y, star.radius, 0, fullCircle, false);
+      this.canvasContext.arc(
+        star.x,
+        star.y,
+        star.radius,
+        0,
+        FULL_CIRCLE_IN_RADIANS,
+        false
+      );
     });
     this.canvasContext.fill();
   }

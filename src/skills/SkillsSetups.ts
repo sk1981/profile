@@ -1,7 +1,7 @@
 import { init } from "snabbdom";
 import SkillsView from "./SkillsView";
 // @ts-ignore
-import * as skillsData from "../../data/skills.json";
+import skillsData from "../../data/skills.json";
 
 var patch = init([
   require("snabbdom/modules/class"),
