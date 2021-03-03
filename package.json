@@ -30,7 +30,7 @@
     "postcss-loader": "^0.9.1",
     "prettier": "^1.19.1",
     "pretty-quick": "^2.0.1",
-    "pug": "^2.0.4",
+    "pug": "^3.0.1",
     "sass-loader": "^4.0.0",
     "style-loader": "^0.13.1",
     "typescript": "^3.8.3"
